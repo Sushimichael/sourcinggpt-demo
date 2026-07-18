@@ -538,6 +538,8 @@ Found a bug, want a channel we don&#x27;t support yet, or just want to talk to t
   const typing = document.getElementById('typing');
   const msgs = [...document.querySelectorAll('#msgs .msg')];
   function playChat(){
+    msgs.forEach(m=>m.classList.remove('show'));
+    typing.classList.remove('on');
     msgs.forEach(m=>{
       const t = +m.dataset.t, ty = +(m.dataset.typing||0);
       if(ty) setTimeout(()=>typing.classList.add('on'), t - ty);
@@ -548,6 +550,8 @@ Found a bug, want a channel we don&#x27;t support yet, or just want to talk to t
     setTimeout(()=>typing.classList.remove('on'), 9600);
   }
   window.addEventListener('load', ()=>setTimeout(playChat, 500));
+  // loop the conversation so the page always feels alive
+  setInterval(()=>{ if(!document.hidden) playChat(); }, 14000);
 
   // ---- scroll reveals ----
   const io = new IntersectionObserver(es=>es.forEach(e=>{
