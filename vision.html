@@ -189,6 +189,19 @@
   .qc-foot{padding:12px 24px;font-size:12px;color:var(--muted);background:#FAFBFA;border-top:1px solid var(--line)}
   .tl.new{animation:pop .35s ease}
   .refnote{font-size:12.5px;color:var(--muted)}
+
+  /* ---------- shopify app walkthrough ---------- */
+  .shopflow{display:flex;flex-direction:column;gap:22px}
+  .shopintro{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px;display:flex;gap:6px 16px;align-items:baseline;flex-wrap:wrap}
+  .shopintro p{font-size:13.5px;color:var(--muted)}
+  .shopintro p b{color:var(--ink)}
+  .shopstep{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px}
+  .shopstep .hd{display:flex;gap:6px 14px;align-items:baseline;flex-wrap:wrap}
+  .shopstep .n{font-family:var(--display);font-weight:800;color:var(--accent);font-size:17px}
+  .shopstep h3{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em}
+  .shopstep p{font-size:13.5px;color:var(--muted);max-width:860px}
+  .shopstep p b{color:var(--ink)}
+  .shopstep img{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;display:block;background:#FFF}
   .ctrls.static #back,.ctrls.static #next,.ctrls.static #skip,.ctrls.static .dots{display:none}
 
   footer.note{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -203,6 +216,7 @@
       <button data-v="ws">Workspace</button>
       <button data-v="inbox">Inbox</button>
       <button data-v="qc">QC</button>
+      <button data-v="shop">Shopify app</button>
       <button data-v="mach">For machines</button>
     </nav>
     <a class="backsite" href="index.html">← Back to site</a>
@@ -307,6 +321,46 @@
     </div>
   </section>
 
+  <!-- ================= SHOPIFY APP ================= -->
+  <section class="stage" id="v-shop">
+    <div class="shopflow">
+      <div class="shopintro">
+        <span class="eyebrow" style="color:var(--accent)">The Shopify app</span>
+        <p>Five screens from stranger to customer. <b>The scan is the hook, the free project is the proof</b> — and "requote everything" is the upgrade. Exactly what a seller sees, in order.</p>
+      </div>
+
+      <div class="shopstep">
+        <div class="hd"><span class="n">01</span><h3>Their store — where it starts</h3></div>
+        <p>Nothing new to learn. acmegoods runs on Shopify like any other store — 34 products, and the top seller costs <b>$11.20/unit landed</b>. The sourcing problem is invisible: it just lives quietly in the margin. No apps installed yet.</p>
+        <img src="img/shop-1-store.png" alt="The seller's Shopify admin — Products list, before installing SourcingGPT" loading="lazy">
+      </div>
+
+      <div class="shopstep">
+        <div class="hd"><span class="n">02</span><h3>One install, from the Shopify App Store</h3></div>
+        <p>Free plan, no card. The listing promises exactly three things: an <b>instant savings scan</b>, <b>one free test project</b>, and an employee — not a directory — who does the work. Thirty seconds from search to installed.</p>
+        <img src="img/shop-2-appstore.png" alt="SourcingGPT listing in the Shopify App Store" loading="lazy">
+      </div>
+
+      <div class="shopstep">
+        <div class="hd"><span class="n">03</span><h3>The scan — instant estimates on install</h3></div>
+        <p>Minutes after install, the whole catalog has been read against <b>4M+ vetted factories</b>: <b>~$18,400/yr</b> in likely savings, per-product ranges with confidence. And one honesty row — the camp mug is "already at market — nice work." That row is what makes the other numbers believable.</p>
+        <img src="img/shop-3-scan.png" alt="SourcingGPT savings scan — estimated savings per product with confidence levels" loading="lazy">
+      </div>
+
+      <div class="shopstep">
+        <div class="hd"><span class="n">04</span><h3>The free test project — the engine, visible</h3></div>
+        <p>One product, real RFQs. Kai emails three vetted factories <b>from the store's own domain</b>, chases the quiet one politely in its timezone, and files every reply to the project. Updates land where the seller already works — WhatsApp, Slack, or an email digest. Nothing sends without approval.</p>
+        <img src="img/shop-4-project.png" alt="Free test project — Kai's activity timeline while quotes come in" loading="lazy">
+      </div>
+
+      <div class="shopstep">
+        <div class="hd"><span class="n">05</span><h3>Quotes in — the estimate, proven</h3></div>
+        <p>The trust moment: we estimated <b>$8.50–9.20</b> — best real quote <b>$8.90 ✓</b>. Three normalized quotes, Kai's pick highlighted, ~$11,500/yr on this one SKU. From here it's samples for <b>$86, credited to the first PO</b> — and 11 more products with findings waiting behind the Growth plan.</p>
+        <img src="img/shop-5-quotes.png" alt="Quotes in — real factory quotes proving the estimate, with sample and upgrade actions" loading="lazy">
+      </div>
+    </div>
+  </section>
+
   <!-- ================= MACHINES ================= -->
   <section class="stage" id="v-mach">
     <div class="mach">
@@ -341,7 +395,7 @@
     </div>
   </section>
 
-  <footer class="note">Concept demo · SourcingGPT v2 · same job, four surfaces — chat, workspace, inbox, machines</footer>
+  <footer class="note">Concept demo · SourcingGPT v2 · same job, five surfaces — chat, workspace, inbox, Shopify app, machines</footer>
 </div>
 
 <script>
@@ -459,14 +513,19 @@
   $("skip").onclick=function(){step=MAX;render()};
   document.addEventListener("keydown",function(e){if(e.key==="ArrowRight")$("next").click();if(e.key==="ArrowLeft")$("back").click()});
 
+  var VIEWS=["agent","ws","inbox","qc","shop","mach"];
   var vb=$("views").querySelectorAll("button");
-  vb.forEach(function(b){b.onclick=function(){
-    vb.forEach(function(x){x.classList.remove("on")});b.classList.add("on");
-    var isRef=b.dataset.v==="mach";
+  function activate(v){
+    vb.forEach(function(x){x.classList.toggle("on",x.dataset.v===v)});
+    var isRef=v==="mach"||v==="shop";
     document.getElementById("ctrls").classList.toggle("static",isRef);
     document.getElementById("refnote").hidden=!isRef;
-    ["agent","ws","inbox","qc","mach"].forEach(function(v){document.getElementById("v-"+v).classList.toggle("on",b.dataset.v===v)});
-  }});
+    VIEWS.forEach(function(x){document.getElementById("v-"+x).classList.toggle("on",x===v)});
+    if(history.replaceState)history.replaceState(null,"","#"+v);
+  }
+  vb.forEach(function(b){b.onclick=function(){activate(b.dataset.v)}});
+  var h=location.hash.replace("#","");
+  if(VIEWS.indexOf(h)>=0)activate(h);
 
   render();
 })();
