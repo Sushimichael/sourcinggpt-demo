@@ -2,23 +2,31 @@
 
 # So, who actually does the sourcing?
 
-We noticed something strange. Every sourcing tool ends the same way: it hands you a list of suppliers — and then the real work starts, and it's yours. The emails. The WeChat threads at 6 AM. The quote in a screenshot of a spreadsheet. The carton math that doesn't add up.
+Every sourcing tool ends the same way: it hands you a list of suppliers — and then the real work starts, and it's yours. The emails. The WeChat threads at 6 AM. The quote in a screenshot of a spreadsheet. The carton math that doesn't add up.
 
-So we built an agent that does the work, not the list.
+So we built a sourcing employee, not a search engine.
 
-You message it like a person — on WhatsApp, WeChat, Slack, Telegram, SMS, or email — and it runs the whole job: RFQ, factory outreach, normalized quotes, PO, inspection, freight, documents. Every consequential step comes back to you for a yes.
+It starts day one trained on 4M+ vetted suppliers, curated by the world's leading sourcing experts. You message it like a person — WhatsApp, WeChat, Slack, Telegram, SMS, or email — and it runs the whole job: RFQ, factory outreach, normalized quotes, sample payments, PO, inspection, freight, documents. Every consequential step comes back to you for a yes.
 
-So far, 2,300+ factory conversations have run through the agent — real factories, real quotes, real shipments.
+So far, 2,300+ factory conversations have run through it — real factories, real quotes, real shipments.
 
-## Examples of what the agent has actually caught
+## What it does that a search tool can't
 
-- **The missing certification.** "This product needs FCC for US import." Caught before the shipment left, not after it was seized. Three questions drafted for the factory the same minute.
-- **The carton math.** Client spec said 24 pcs/carton; the factory packed 12. The shipment would've been blocked at the warehouse. Rework instructions drafted, factory notified on WeChat, human CC'd.
-- **The quiet factory.** Factory C went silent for three days. The agent chased — politely, in Chinese, at Shenzhen business hours — so nobody else had to.
-- **The quote spread.** Listed price $11.20/unit. Real factory quotes: $8.90, $9.40, $9.85. That's −21% found in one RFQ round, not a marketplace listing.
-- **The QC contradiction.** The inspection report said 500 units passed; the PO said 550 shipped. The agent flagged the gap before the invoice was paid.
-- **The 2 AM "book it."** The most common owner reply, across every channel: two words, sent late, acted on by morning in Asia. That's the whole interface.
-- **The audit that mattered.** "Factory A is the strongest match — price, tooling in-house, and they passed a BV audit in March." Judgment, not just data.
+- **Emails factories.** Real outreach in their language, on email and WeChat, chased until they answer. You're cc'd on everything.
+- **Compares quotes.** Three currencies, three formats, one honest table: unit price, MOQ, lead time, notes.
+- **Issues POs.** Cuts the purchase order on your terms — 30% deposit, 70% against B/L — and sends it.
+- **Pays for samples.** Sample invoice paid by PayPal, receipt filed to the job automatically.
+- **Sends a human.** AI can't walk a factory floor, so it books SGS, QIMA or Bureau Veritas to do it — then reads the report.
+- **Books the freight.** Live rates, booking, tracking, and the documents that clear customs.
+
+## Examples of what it has actually caught
+
+- **The missing certification.** "This product needs FCC for US import." Caught before the shipment left, not after it was seized.
+- **The carton math.** Client spec said 24 pcs/carton; the factory packed 12. The shipment would've been blocked at the warehouse.
+- **The quiet factory.** Factory C went silent for three days. It chased — politely, in Chinese, at Shenzhen business hours.
+- **The quote spread.** Listed price $11.20/unit. Real factory quotes: $8.90, $9.40, $9.85. That's −21% found in one RFQ round.
+- **The QC contradiction.** The inspection report said 500 units passed; the PO said 550 shipped. Flagged before the invoice was paid.
+- **The 2 AM "book it."** The most common owner reply, across every channel: two words, sent late, acted on by morning in Asia.
 
 ## Two ways to hire it
 
@@ -36,31 +44,32 @@ So far, 2,300+ factory conversations have run through the agent — real factori
     claude mcp add sourcinggpt https://sourcinggpt.ai/mcp
 
     capabilities: search_suppliers · create_rfq · compare_quotes ·
-                  book_qc · book_freight · generate_docs
+                  order_samples · pay_sample_invoice · generate_po ·
+                  book_inspection · book_shipment · generate_docs
 
-Agent2Agent (A2A) is supported for agent-to-agent hiring. Your agent asks, our agent works, your human approves.
+Agent2Agent (A2A) is supported for agent-to-agent hiring. Your agent asks, our employee works, your human approves.
 
-## What you get
+## It comes with its own inbox
 
-Not introductions — outcomes. Quotes you can sign, orders that ship, documents that clear. Under the hood: SourceReady's discovery engine (4M+ manufacturers, verified trade data), twenty years of supply-chain judgment codified from shipping for brands like Amazon and Walmart, and one-click rails into the companies that do this work at global scale — SGS, Intertek, Bureau Veritas, QIMA for inspection; CPSIA/REACH/FCC labs for testing; live freight rates; PO financing on documented orders.
+Your employee works from your own email domain — kai@yourcompany.com. Factories reply to your company, not a tool. Every thread files itself to the right job, and you're cc'd on everything it sends. Like any good hire: a name, an email address, and a paper trail you can audit.
 
 ## You approve everything
 
-The agent proposes; you decide. It will draft the RFQ and ask before contacting factories (you're CC'd on every message). It will find the inspection slot and ask before booking the $200 SGS visit. It will find the financing rate and ask before touching a payment. Nothing real happens without your yes — from you, on your channel, in two words if you like.
+It proposes; you decide. It drafts the RFQ and asks before contacting factories. It finds the inspection slot and asks before booking the $299 SGS visit. It finds the financing rate and asks before touching a payment. Nothing real happens without your yes — from you, on your channel, in two words if you like.
 
 ## Common questions
 
 - **Which channels does it work on?** WhatsApp, WeChat, Slack, Telegram, SMS (US numbers), and email. Factory-side, it works where factories actually reply: email and WeChat. Machine-side: MCP and Agent2Agent.
-- **Does it really contact factories?** Yes. Real outreach, in the factory's language, chased until answered. You're CC'd on everything.
+- **Does it really contact factories?** Yes. Real outreach, in the factory's language, chased until answered. You're cc'd on everything.
+- **Can it really pay for things?** Sample invoices, yes — by PayPal, with your approval and a receipt filed to the job. Larger payments stay with you.
 - **Is my data safe?** Your catalog, specs, and quotes stay in your workspace. Factories see only what an RFQ needs. We never resell your pricing data.
-- **What does it cost?** Your first RFQ is free. After that, plans scale with order volume — and service bookings (inspection, testing, freight, financing) are pay-per-use with the price shown before you approve.
-- **How fast are quotes?** Factories typically reply in 2–3 days. The agent normalizes everything into one comparable table — unit price, MOQ, lead time, notes — the moment replies land.
-- **Can it handle QC, shipping, and payment too?** Yes — that's the point. Inspections (SGS, Intertek, BV, QIMA), lab testing to the right standard, freight booking with live rates and documents, and PO financing on fully documented orders. One click each, your approval first.
+- **What does it cost?** Your first RFQ is free. After that, plans scale with order volume — and service bookings (inspection, testing, freight) are pay-per-use with the price shown before you approve.
+- **How fast are quotes?** Factories typically reply in 2–3 days. Everything normalizes into one comparable table the moment replies land.
 - **My company already built its own purchasing tool. Can it use this?** Yes — that's what the MCP connector is for. Your tool keeps its interface; ours does the sourcing underneath.
-- **What if the agent gets something wrong?** Every catch and every commitment routes through a human approval. If a factory reply is ambiguous, the agent says so instead of guessing.
-- **Who's behind this?** People who do this work. The agent is built and tested daily on live orders at Headwind, a real sourcing operation — every design decision is checked against how this work actually gets done, not how software companies imagine it.
-- **Where does the supplier data come from?** SourceReady's verified trade data (4M+ manufacturers across 200+ countries), sharpened by every executed order: real quotes vs listed prices, true lead times, QC pass rates, factory response behavior.
+- **What if it gets something wrong?** Every catch and every commitment routes through a human approval. If a factory reply is ambiguous, it says so instead of guessing.
+- **Who's behind this?** People who do this work. It's built and tested daily on live orders at Headwind, a real sourcing operation.
+- **Where does the supplier data come from?** 4M+ manufacturers across 200+ countries of verified trade data, sharpened by every executed order: real quotes vs listed prices, true lead times, QC pass rates, factory response behavior.
 
 ## Talk to a human
 
-Found a bug, want a channel we don't support yet, or just want to talk to the people behind the agent? Email hello@sourcinggpt.ai — a human reads it, though we won't pretend the agent doesn't draft the reply.
+Found a bug, want a channel we don't support yet, or just want to talk to the people behind it? Email hello@sourcinggpt.ai — a human reads it, though we won't pretend the employee doesn't draft the reply.
