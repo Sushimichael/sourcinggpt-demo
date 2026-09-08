@@ -283,6 +283,9 @@
   .kghost{border:1px dashed #D9DAD6;border-radius:10px;padding:7px 11px;display:flex;gap:8px;align-items:center;font-size:12px;font-weight:600;color:var(--muted)}
   .kghost .tag{font-family:var(--mono);font-size:9px;border-radius:5px;padding:2px 6px}
   .kghost.trend .tag{color:#7C3AED;background:#F1EAFE}
+  .kcard.focus,.kghost.focus{border-color:#3ECF6E;box-shadow:0 0 0 2px rgba(62,207,110,.22)}
+  .kfoc{display:none;font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;color:#0B3A20;background:#3ECF6E;border-radius:5px;padding:2px 7px;white-space:nowrap}
+  .focus .kfoc{display:inline-flex}
   .kghost.amber .tag{color:#8A5800;background:#FBF2DF}
   .kwatch{display:flex;gap:8px;padding:4px 2px;font-size:12px;align-items:flex-start}
   .kwatch .ic{font-size:12px;padding-top:1px}
@@ -446,7 +449,7 @@
         </div>
         <div class="klbl">Jobs · <span id="kslots">3 of 5 slots</span></div>
         <div class="kcard price" id="kcardJob">
-          <span class="tag">PRICE</span>
+          <div style="display:flex;gap:6px;align-items:center"><span class="tag">PRICE</span><span class="kfoc">💬 DISCUSSING</span></div>
           <b>32oz bottle — beat $11.20</b>
           <span class="st" id="kbottleStatus">Brief taking shape</span>
           <small>closes when: PO cut · <b style="color:var(--accent)">open →</b></small>
@@ -454,7 +457,7 @@
         <div class="kcard amber"><span class="tag">REQUOTE</span><b>Weekender tote</b><span class="st">RFQ out · replies day 2 of 3</span></div>
         <div class="kcard blue"><span class="tag">QC</span><b>Camp mug — inspection</b><span class="st">SGS on the line Thursday</span></div>
         <div class="klbl">Queued</div>
-        <div class="kghost trend" id="kqtrend" hidden><span class="tag">TREND</span>Collapsible bottle — test</div>
+        <div class="kghost trend" id="kqtrend" hidden><span class="tag">TREND</span>Collapsible bottle — test <span class="kfoc">💬 DISCUSSING</span></div>
         <div class="kghost amber"><span class="tag">REQUOTE</span>Bamboo serving board</div>
         <div class="klbl">Standing orders</div>
         <div class="kwatch" id="kwatchBottle" hidden><span class="ic">🕐</span><span><b>Bottle requote — quarterly</b><small>opens a job if the price moves &gt;5%</small></span></div>
@@ -626,7 +629,12 @@
             <div class="provline"><span><b>Sampling &amp; payments</b> — invoices, PayPal, receipts filed</span><span class="mono">unlocked by the bottle job</span></div>
             <div class="provline"><span><b>Inspection booking</b> — SGS · QIMA · Bureau Veritas</span><span class="mono">unlocked at PO stage</span></div>
           </div></div>
-          <div class="integr"><span class="ig soon">Freight booking — unlocks with your first shipment</span><span class="ig soon">PO financing — unlocks on documented orders</span><span class="ig soon">Customs docs — soon</span></div>
+          <div class="panelbox" style="margin-top:14px"><h4>Connections — access you've granted him</h4><div class="pb">
+            <div class="provline"><span><b>PayPal</b> — pays sample invoices</span><span class="mono">cap: $200 without asking · granted Sep 4</span></div>
+            <div class="provline"><span><b>Gmail</b> — sends as kai@acmegoods.com</span><span class="mono">chasers auto · anything with numbers asks</span></div>
+            <div class="provline"><span><b>Shopify</b> — reads catalog, costs &amp; volumes</span><span class="mono">read-only · granted at install</span></div>
+          </div></div>
+          <div class="integr"><span class="ig soon">Freight booking — unlocks with your first shipment</span><span class="ig soon">PO financing — unlocks on documented orders</span><span class="ig soon">QuickBooks · Xero — soon</span><span class="ig soon">Customs docs — soon</span></div>
         </div>
       </div>
     </div>
@@ -934,6 +942,9 @@
     var ks=$("kslots");if(ks)ks.textContent=(step>=6?"4":"3")+" of 5 slots";
     var kw=$("kwatchBottle");if(kw)kw.hidden=step<11;
     var kr=$("kreceipts");if(kr){var rh="";for(var s4=step;s4>=0&&s4>step-4;s4--)rh+='<div class="krec">'+actAt[s4]+"</div>";kr.innerHTML=rh}
+    /* which job is the chat discussing right now */
+    var kfB=$("kcardJob");if(kfB)kfB.classList.toggle("focus",step>0&&step!==6);
+    var kfT=$("kqtrend");if(kfT)kfT.classList.toggle("focus",step===6);
   }
 
   $("next").onclick=function(){if(step<MAX){step++;render()}};
