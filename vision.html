@@ -321,6 +321,30 @@
   .kexpand:hover{color:var(--ink);border-color:var(--ink)}
   .kscreen{border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:0 4px 12px rgba(19,20,22,.06);transition:box-shadow .15s}
   .kscreen:hover{box-shadow:0 6px 18px rgba(19,20,22,.14)}
+  /* monitor treatment */
+  .kmon{cursor:pointer;display:flex;flex-direction:column;align-items:center}
+  .kmon-bezel{background:#17181A;border-radius:14px;padding:9px;width:100%;box-shadow:0 10px 26px rgba(19,20,22,.18);transition:transform .15s}
+  .kmon:hover .kmon-bezel{transform:translateY(-2px)}
+  .kmon-desk{border-radius:7px;overflow:hidden;background:linear-gradient(160deg,#C7D4C9,#9FB3A4);animation:kmonflash 5s infinite}
+  @keyframes kmonflash{0%,90%{opacity:1}94%{opacity:.55}100%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.kmon-desk{animation:none}}
+  .kmon-menubar{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.82);padding:2px 8px}
+  .kmon-menubar span{font-family:var(--mono);font-size:7.5px;color:#3A3D42}
+  .kmon-wall{position:relative;padding:12px 10px 14px;min-height:150px}
+  .kmon-win{background:#FFF;border-radius:6px;box-shadow:0 4px 12px rgba(19,20,22,.18)}
+  .kmon-win.back{position:absolute;top:20px;right:6px;width:38%;height:70%;opacity:.55}
+  .kmon-win.front{position:relative;width:92%}
+  .kmon-winbar{display:flex;align-items:center;gap:4px;background:#17181A;border-radius:6px 6px 0 0;padding:4px 7px}
+  .kmon-winbar i{width:5px;height:5px;border-radius:50%;background:#3A3D42;flex-shrink:0}
+  .kmon-winbar span{font-family:var(--mono);font-size:6.5px;letter-spacing:.04em;color:#A8ADB2;margin-left:2px;white-space:nowrap;overflow:hidden}
+  .kmon-winbar b{font-family:var(--mono);font-size:6.5px;color:#8FE0B0;margin-left:auto}
+  .kmon-body{display:flex;flex-direction:column;gap:5px;padding:8px}
+  .kmon-body .kqrow{padding:4px 7px;font-size:9px;border-radius:5px}
+  .kmon-body .kqrow .p{font-size:9px}
+  .kmon-stand{width:52px;height:16px;background:linear-gradient(180deg,#2A2D31,#1B1D20);margin-top:-1px}
+  .kmon-base{width:120px;height:7px;background:#2A2D31;border-radius:99px}
+  .kmon-cap{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--muted);text-align:center;margin-top:2px}
+  .kmon-cap .live{color:var(--accent)}
   .kscr-bar{display:flex;align-items:center;gap:7px;background:var(--term);padding:7px 10px}
   .kscr-bar .dots3{display:flex;gap:4px}
   .kscr-bar .dots3 i{width:7px;height:7px;border-radius:50%;background:#3A3D42}
@@ -486,16 +510,27 @@
       </div>
       <aside class="kside">
         <div style="display:flex;justify-content:space-between;align-items:center"><span class="klbl" style="padding:0">Kai's screen · watch-only</span><button class="kexpand" id="kexpandBtn">⤢ full screen</button></div>
-        <div class="kscreen" id="kscreenPrev">
-          <div class="kscr-bar"><span class="dots3"><i></i><i></i><i></i></span><span>SOURCEREADY ENTERPRISE</span><span class="kk">● KAI</span></div>
-          <div class="kscr-body">
-            <b>Compare quotes — SGX-0142</b>
-            <div class="kqrow best"><span>Shenzhen Metalworks</span><span class="p">$8.90 ▸</span></div>
-            <div class="kqrow"><span>Hanoi Steelcraft</span><span class="p">$9.10</span></div>
-            <div class="kqrow"><span>Ningbo Drinkware</span><span class="p">$9.35</span></div>
-            <span style="font-family:var(--mono);font-size:9px;color:var(--muted)">▸ drafting sample order · 11:07:42 · click to expand</span>
+        <div class="kmon" id="kscreenPrev" title="Click to expand Kai's screen">
+          <div class="kmon-bezel">
+            <div class="kmon-desk">
+              <div class="kmon-menubar"><span></span><span id="kmonClock">Tue 11:07</span></div>
+              <div class="kmon-wall">
+                <div class="kmon-win back"></div>
+                <div class="kmon-win front">
+                  <div class="kmon-winbar"><i></i><i></i><i></i><span>SourceReady Enterprise — Quotes · SGX-0142</span><b>● KAI</b></div>
+                  <div class="kmon-body">
+                    <div class="kqrow best"><span>Shenzhen Metalworks</span><span class="p">$8.90 ▸</span></div>
+                    <div class="kqrow"><span>Hanoi Steelcraft</span><span class="p">$9.10</span></div>
+                    <div class="kqrow"><span>Ningbo Drinkware</span><span class="p">$9.35</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="kmon-stand"></div>
+          <div class="kmon-base"></div>
         </div>
+        <p class="kmon-cap"><span class="live">●</span> LIVE · snapshot every 5s · <span id="kmonStamp">11:07:42</span> · click to expand</p>
         <p class="kcap">Kai works on the <b>same SourceReady platform enterprise teams use</b> — the way a human would. Watch anytime; every action files a receipt. To steer him, talk.</p>
         <div class="klbl" style="padding:0">Receipts · this job</div>
         <div id="kreceipts"></div>
@@ -852,6 +887,7 @@
   "use strict";
   /* ---------- story script ---------- */
   var beats=[
+    {t:"Hired — one question",x:"Setup is a single choice: where should Kai message you? That's the whole onboarding."},
     {t:"Meet the agent",x:"It introduces itself like a hire — name, desk, your domain."},
     {t:"The ask",x:"One message. The spec and photo come straight from the store."},
     {t:"Approve the plan",x:"Nothing moves without a yes. You're cc'd on every email."},
@@ -866,7 +902,10 @@
     {t:"Delivered, on time",x:"The job closes with a number, not a feeling."}
   ];
   var msgs=[
-    // 0
+    // 0 — onboarding: one choice
+    ['<div class="msg from-sys"><div class="card"><div class="c-head"><span>Setup · step 1 of 1</span><span>that\'s all of it</span></div><div class="c-body"><div style="font-size:13px;font-weight:700;margin-bottom:8px">Where should Kai message you?</div><div class="chiprow" style="margin-top:0"><span class="chip" style="border-color:var(--good);background:var(--good-soft);color:var(--good)">💬 WhatsApp ✓</span><span class="chip">✉️ Email</span><span class="chip">🤖 Your AI</span><span class="chip">💻 Web</span></div><div style="font-size:11px;color:var(--muted);margin-top:8px">same Kai on every channel · add more anytime</div></div></div></div>',
+     '<div class="msg from-user">Hi Kai<span class="t">09:40</span></div>'],
+    // 1
     ['<div class="msg from-agent">Hi — I\'m <b>Kai</b>, your sourcing employee. I\'ve read your store: 34 SKUs, top seller is the 32&nbsp;oz stainless bottle. Ask me for anything — a factory, a better price, a sample at your door.<span class="t">09:41</span></div>'],
     // 1
     ['<div class="msg from-user">We\'re paying <b>$11.20/unit</b> for the 32oz bottle. Beat it.<div class="chiprow"><span class="chip"><span class="ic">📄</span>bottle-spec-v3.pdf<small>from your Shopify listing</small></span></div><div class="imgrid"><div class="im">🍼</div></div><span class="t">09:42</span></div>'],
@@ -903,8 +942,9 @@
 
   /* per-step workspace data */
   var stageNames=["Brief","RFQ","Quotes","Samples","PO","QC","Shipped"];
-  var stepStage=[0,0,1,1,1,2,2,3,3,4,5,6];
-  var docsAt=[[],
+  var stepStage=[0,0,0,1,1,1,2,2,3,3,4,5,6];
+  var docsAt=[["📲 WhatsApp connected|setup · step 1 of 1"],
+    [],
     ["📄 bottle-spec-v3.pdf|from Shopify"],
     [],
     ["✉️ RFQ-0142 draft|approved · 1 edit"],
@@ -916,16 +956,17 @@
     ["📋 PO-2047.pdf|30% dep · 70% B/L"],
     ["🗓 SGS booking|pre-shipment · Mar 18"],
     ["🧾 SGS-report.pdf|AQL 2.5 ✓","🚢 B/L-88231.pdf|ETA Apr 22"]];
-  var actAt=["Employee started — kai@acmegoods.com live","Ask received in WhatsApp","Plan approved — 3 factories","RFQ draft approved — your edit noted to profile","RFQs sent · replies parsing to this job","3 quotes normalized (−21%)","2 alternates proposed · trend-test job queued","Samples paid $86 · receipted","Samples delivered · buyer approved quality","PO-2047 cut & sent — $44,500","SGS inspection booked (agent suggested)","Delivered on time · $11,500 saved"];
+  var actAt=["Hired · channel connected — WhatsApp (setup: one choice)",
+    "Employee started — kai@acmegoods.com live","Ask received in WhatsApp","Plan approved — 3 factories","RFQ draft approved — your edit noted to profile","RFQs sent · replies parsing to this job","3 quotes normalized (−21%)","2 alternates proposed · trend-test job queued","Samples paid $86 · receipted","Samples delivered · buyer approved quality","PO-2047 cut & sent — $44,500","SGS inspection booked (agent suggested)","Delivered on time · $11,500 saved"];
 
   var mails=[
-    {fr:"Kai (your agent)",em:"kai@acmegoods.com",sub:"RFQ — 32oz bottle, 5,000 pcs",pre:"→ 3 factories · you're cc'd",tag:"SGX-0142",hot:1,at:4},
-    {fr:"Shenzhen Metalworks",em:"sales@szmetalworks.cn",sub:"Re: RFQ — quotation attached",pre:"FOB $8.90, MOQ 500 …",tag:"SGX-0142",hot:1,at:5},
-    {fr:"Ningbo Drinkware",em:"lily@nbdrinkware.com",sub:"Re: RFQ — our best offer",pre:"USD 9.35 with tooling included …",tag:"SGX-0142",at:5},
-    {fr:"DHL Express",em:"noreply@dhl.com",sub:"Shipment 4471 — out for delivery",pre:"2 parcels · signature required",tag:"SGX-0142",at:8},
-    {fr:"SGS Hong Kong",em:"booking@sgs.com",sub:"Inspection confirmed — Mar 18",pre:"Pre-shipment · AQL 2.5 · inspector assigned",tag:"SGX-0142",hot:1,at:10},
-    {fr:"Hangzhou Packfine",em:"amy@packfine.cn",sub:"Re: RFQ — mailer boxes",pre:"Quote for 10k units attached …",tag:"SGX-0139",at:0},
-    {fr:"SGS Hong Kong",em:"reports@sgs.com",sub:"Inspection report — PASSED",pre:"AQL 2.5 ✓ · 14 pages · filed to job",tag:"SGX-0142",hot:1,at:11}
+    {fr:"Kai (your agent)",em:"kai@acmegoods.com",sub:"RFQ — 32oz bottle, 5,000 pcs",pre:"→ 3 factories · you're cc'd",tag:"SGX-0142",hot:1,at:5},
+    {fr:"Shenzhen Metalworks",em:"sales@szmetalworks.cn",sub:"Re: RFQ — quotation attached",pre:"FOB $8.90, MOQ 500 …",tag:"SGX-0142",hot:1,at:6},
+    {fr:"Ningbo Drinkware",em:"lily@nbdrinkware.com",sub:"Re: RFQ — our best offer",pre:"USD 9.35 with tooling included …",tag:"SGX-0142",at:6},
+    {fr:"DHL Express",em:"noreply@dhl.com",sub:"Shipment 4471 — out for delivery",pre:"2 parcels · signature required",tag:"SGX-0142",at:9},
+    {fr:"SGS Hong Kong",em:"booking@sgs.com",sub:"Inspection confirmed — Mar 18",pre:"Pre-shipment · AQL 2.5 · inspector assigned",tag:"SGX-0142",hot:1,at:11},
+    {fr:"Hangzhou Packfine",em:"amy@packfine.cn",sub:"Re: RFQ — mailer boxes",pre:"Quote for 10k units attached …",tag:"SGX-0139",at:1},
+    {fr:"SGS Hong Kong",em:"reports@sgs.com",sub:"Inspection report — PASSED",pre:"AQL 2.5 ✓ · 14 pages · filed to job",tag:"SGX-0142",hot:1,at:12}
   ];
 
   var step=0,MAX=msgs.length-1,lastMail=0;
@@ -950,9 +991,9 @@
     var docs=[];for(var s2=0;s2<=step;s2++)docs=docs.concat(docsAt[s2]);
     $("nDocs").textContent=docs.length;
     $("wsDocs").innerHTML=docs.length?docs.map(function(x){var p=x.split("|");return '<div class="docline"><span>'+p[0]+'</span><span class="mono">'+p[1]+"</span></div>"}).join(""):'<p class="empty">Nothing filed yet.</p>';
-    $("wsQuotes").innerHTML=step>=5?'<div class="qrow best"><span class="f">Shenzhen Metalworks</span><span class="badge">BV ✓</span><span class="p"><b>$8.90</b> · 30d</span></div><div class="qrow"><span class="f">Ningbo Drinkware</span><span class="p">$9.35 · 25d</span></div><div class="qrow"><span class="f">Hanoi Steelcraft</span><span class="p">$9.10 · 40d</span></div><div style="margin-top:8px" class="save mono">−21% vs current price</div>':'<p class="empty">No quotes yet — RFQs '+(step>=4?"out, replies pending.":"not sent.")+"</p>";
-    $("nQuotes").textContent=step>=5?3:0;
-    $("wsPay").innerHTML=step>=7?'<div class="docline"><span>🧾 Samples + freight</span><span class="mono">PayPal · $86.00 · paid</span></div>'+(step>=9?'<div class="docline"><span>📋 PO-2047 deposit</span><span class="mono">wire · $13,350 · scheduled</span></div>':""):'<p class="empty">No payments on this job.</p>';
+    $("wsQuotes").innerHTML=step>=6?'<div class="qrow best"><span class="f">Shenzhen Metalworks</span><span class="badge">BV ✓</span><span class="p"><b>$8.90</b> · 30d</span></div><div class="qrow"><span class="f">Ningbo Drinkware</span><span class="p">$9.35 · 25d</span></div><div class="qrow"><span class="f">Hanoi Steelcraft</span><span class="p">$9.10 · 40d</span></div><div style="margin-top:8px" class="save mono">−21% vs current price</div>':'<p class="empty">No quotes yet — RFQs '+(step>=5?"out, replies pending.":"not sent.")+"</p>";
+    $("nQuotes").textContent=step>=6?3:0;
+    $("wsPay").innerHTML=step>=8?'<div class="docline"><span>🧾 Samples + freight</span><span class="mono">PayPal · $86.00 · paid</span></div>'+(step>=10?'<div class="docline"><span>📋 PO-2047 deposit</span><span class="mono">wire · $13,350 · scheduled</span></div>':""):'<p class="empty">No payments on this job.</p>';
     var acts="";for(var s3=step;s3>=0;s3--)acts+='<div class="docline"><span>'+actAt[s3]+"</span></div>";
     $("wsAct").innerHTML=acts;
     /* inbox */
@@ -962,7 +1003,7 @@
     lastMail=vis.length;
     /* qc */
     var qc=[];
-    if(step>=10)qc.push({j:"SGX-0142 · 32oz stainless bottle",t:"you approved in chat · $299",d:"Pre-shipment inspection · SGS Shenzhen"+(step>=11?" · report filed to job":" · inspector assigned, visit Mar 18"),st:step>=11?["passed","Passed · AQL 2.5 ✓"]:["sched","Scheduled · Mar 18"]});
+    if(step>=11)qc.push({j:"SGX-0142 · 32oz stainless bottle",t:"you approved in chat · $299",d:"Pre-shipment inspection · SGS Shenzhen"+(step>=12?" · report filed to job":" · inspector assigned, visit Mar 18"),st:step>=12?["passed","Passed · AQL 2.5 ✓"]:["sched","Scheduled · Mar 18"]});
     qc.push({j:"SGX-0135 · silicone lids",t:"during production",d:"SGS Ningbo · inspector on site today — photos land in the job thread",st:["prog","In progress"]});
     qc.push({j:"SGX-0139 · mailer boxes",t:"sample check",d:"QIMA · passed Feb 12 · report filed",st:["passed","Passed"]});
     $("nQC").textContent=qc.length;
@@ -971,13 +1012,13 @@
     var kt=$("kthread");if(kt){kt.innerHTML=h;kt.scrollTop=kt.scrollHeight}
     var kst=["Brief taking shape","RFQ out — you're cc'd","● Quotes in · your call","Samples paid · en route","PO cut — $44,500","SGS inspection booked","Delivered ✓ · $11,500/yr"];
     var kb=$("kbottleStatus");if(kb){kb.textContent=kst[st];kb.style.color=st>=2?"#149A4E":"#6A6F74"}
-    var kq2=$("kqtrend");if(kq2)kq2.hidden=step<6;
-    var ks=$("kslots");if(ks)ks.textContent=(step>=6?"4":"3")+" of 5 slots";
-    var kw=$("kwatchBottle");if(kw)kw.hidden=step<11;
+    var kq2=$("kqtrend");if(kq2)kq2.hidden=step<7;
+    var ks=$("kslots");if(ks)ks.textContent=(step>=7?"4":"3")+" of 5 slots";
+    var kw=$("kwatchBottle");if(kw)kw.hidden=step<12;
     var kr=$("kreceipts");if(kr){var rh="";for(var s4=step;s4>=0&&s4>step-4;s4--)rh+='<div class="krec">'+actAt[s4]+"</div>";kr.innerHTML=rh}
     /* which job is the chat discussing right now */
-    var kfB=$("kcardJob");if(kfB)kfB.classList.toggle("focus",step>0&&step!==6);
-    var kfT=$("kqtrend");if(kfT)kfT.classList.toggle("focus",step===6);
+    var kfB=$("kcardJob");if(kfB)kfB.classList.toggle("focus",step>1&&step!==7);
+    var kfT=$("kqtrend");if(kfT)kfT.classList.toggle("focus",step===7);
   }
 
   $("next").onclick=function(){if(step<MAX){step++;render()}};
@@ -998,6 +1039,8 @@
   $("kexpandBtn").onclick=function(){kOpen("kmodal-screen")};
   $("klink-profile").onclick=function(){kOpen("kmodal-profile")};
   $("kaiIdBtn").onclick=function(){kOpen("kmodal-profile")};
+  var kstamp=$("kmonStamp");
+  if(kstamp)setInterval(function(){var d=new Date();kstamp.textContent=("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2)},5000);
   $("klink-skills").onclick=function(){kOpen("kmodal-skills")};
   $("klink-arch").onclick=function(){kOpen("kmodal-arch")};
   function kscrTab(t){["quotes","inbox","qc"].forEach(function(x){$("kscr-"+x).hidden=x!==t;$("kscrtab-"+x).classList.toggle("on",x===t)})}
