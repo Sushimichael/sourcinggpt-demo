@@ -262,6 +262,85 @@
   .en-foot .gpt{color:#3ECF6E}
   @media(max-width:900px){.en-meters{grid-template-columns:1fr 1fr}.en-w{min-width:200px}.en-w+.en-w{border-left:none;padding-left:0}.en-audit{text-align:left}}
 
+  /* ---------- kai desktop ---------- */
+  .kdesk{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:620px}
+  .krail{width:288px;flex-shrink:0;background:#FAFBFA;border-right:1px solid var(--line);padding:16px 14px;display:flex;flex-direction:column;gap:10px}
+  .kai-id{display:flex;gap:11px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .kai-av{width:42px;height:42px;border-radius:50%;background:#3ECF6E;color:#0B3A20;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:17px;flex-shrink:0}
+  .kai-id b{font-size:15px;display:block}
+  .kai-id small{font-size:11.5px;color:var(--muted);display:block}
+  .kai-id .em{font-family:var(--mono);font-size:9.5px;color:var(--muted)}
+  .klbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;padding:4px 2px 0}
+  .kcard{background:#FFF;border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;cursor:pointer;transition:box-shadow .15s}
+  .kcard:hover{box-shadow:0 3px 10px rgba(19,20,22,.1)}
+  .kcard .tag{font-family:var(--mono);font-size:9px;letter-spacing:.06em;border-radius:5px;padding:2px 7px;align-self:flex-start}
+  .kcard b{font-size:13px}
+  .kcard .st{font-size:11.5px;font-weight:600;color:var(--muted)}
+  .kcard small{font-size:10.5px;color:var(--muted)}
+  .kcard.price{border-left:3px solid #149A4E}.kcard.price .tag{color:#149A4E;background:#E9F7EE}
+  .kcard.amber{border-left:3px solid #E5A100}.kcard.amber .tag{color:#8A5800;background:#FBF2DF}
+  .kcard.blue{border-left:3px solid #2F6FEB}.kcard.blue .tag{color:#234E9E;background:#E8EFFC}
+  .kghost{border:1px dashed #D9DAD6;border-radius:10px;padding:7px 11px;display:flex;gap:8px;align-items:center;font-size:12px;font-weight:600;color:var(--muted)}
+  .kghost .tag{font-family:var(--mono);font-size:9px;border-radius:5px;padding:2px 6px}
+  .kghost.trend .tag{color:#7C3AED;background:#F1EAFE}
+  .kghost.amber .tag{color:#8A5800;background:#FBF2DF}
+  .kwatch{display:flex;gap:8px;padding:4px 2px;font-size:12px;align-items:flex-start}
+  .kwatch .ic{font-size:12px;padding-top:1px}
+  .kwatch b{font-size:12px;display:block}
+  .kwatch small{display:block;font-size:10.5px;color:var(--muted)}
+  .klink{display:flex;justify-content:space-between;align-items:baseline;padding:6px 2px;font-size:12.5px;font-weight:600;cursor:pointer}
+  .klink:hover{color:var(--accent)}
+  .klink span{font-family:var(--mono);font-size:9.5px;color:var(--muted);font-weight:400}
+  .krail .bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:6px}
+  .kchat{flex:1;display:flex;flex-direction:column;min-width:0}
+  .kchat .khead{display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .kchat .khead b{font-size:14.5px}
+  .ksync{font-family:var(--mono);font-size:9px;letter-spacing:.05em;color:var(--accent);background:var(--accent-soft);border:1px solid #A6E9C0;border-radius:999px;padding:3px 9px;white-space:nowrap}
+  .kthread{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#FAFBFA,#F1F6F2);max-height:560px}
+  .kcomposer{display:flex;align-items:center;gap:9px;padding:12px 16px;border-top:1px solid var(--line)}
+  .kcomposer .field{flex:1;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:12.5px;color:var(--muted)}
+  .kside{width:326px;flex-shrink:0;border-left:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+  .kexpand{border:1px solid var(--line);background:#FFF;border-radius:8px;padding:4px 9px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer}
+  .kexpand:hover{color:var(--ink);border-color:var(--ink)}
+  .kscreen{border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:0 4px 12px rgba(19,20,22,.06);transition:box-shadow .15s}
+  .kscreen:hover{box-shadow:0 6px 18px rgba(19,20,22,.14)}
+  .kscr-bar{display:flex;align-items:center;gap:7px;background:var(--term);padding:7px 10px}
+  .kscr-bar .dots3{display:flex;gap:4px}
+  .kscr-bar .dots3 i{width:7px;height:7px;border-radius:50%;background:#3A3D42}
+  .kscr-bar span{font-family:var(--mono);font-size:8.5px;letter-spacing:.05em;color:#A8ADB2}
+  .kscr-bar .kk{margin-left:auto;color:#8FE0B0}
+  .kscr-body{padding:11px 12px;display:flex;flex-direction:column;gap:7px;background:#FFF}
+  .kscr-body b{font-size:11.5px}
+  .kqrow{display:flex;justify-content:space-between;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:10.5px;color:var(--muted)}
+  .kqrow.best{background:#F4FBF6;border-color:#A6E9C0;color:var(--ink);font-weight:600}
+  .kqrow .p{font-family:var(--mono)}
+  .kqrow.best .p{color:var(--accent);font-weight:600}
+  .kcap{font-size:11.5px;color:var(--muted);line-height:1.5}
+  .krec{font-size:11.5px;padding:4px 0;border-bottom:1px solid var(--line)}
+  .krec:last-child{border-bottom:none}
+  .kside-foot{margin-top:auto;border-top:1px solid var(--line);padding-top:9px;text-align:center}
+  .kside-foot span{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--muted)}
+  .koverlay{position:fixed;inset:0;background:rgba(19,20,22,.45);display:flex;align-items:center;justify-content:center;z-index:60;padding:20px}
+  .koverlay[hidden]{display:none}
+  .kmodal{background:#FFF;border-radius:18px;box-shadow:0 24px 70px rgba(19,20,22,.3);max-width:960px;width:100%;max-height:92vh;overflow-y:auto}
+  .km-head{display:flex;align-items:center;gap:10px;padding:15px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#FFF;z-index:2;flex-wrap:wrap}
+  .km-head b{font-size:15.5px}
+  .kmtag{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:#149A4E;background:#E9F7EE;border-radius:5px;padding:3px 8px}
+  .km-x{margin-left:auto;cursor:pointer;font-weight:600;color:var(--muted);background:none;border:none;font-size:15px;padding:4px 8px}
+  .km-x:hover{color:var(--ink)}
+  .km-body{padding:18px 24px}
+  .km-note{font-size:11.5px;color:var(--muted);margin-top:12px}
+  .kscrtabs{display:flex;gap:6px;padding:10px 24px;border-bottom:1px solid var(--line)}
+  .kscrtabs button{border:1px solid var(--line);background:#FFF;border-radius:999px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer}
+  .kscrtabs button.on{background:var(--ink);color:#FFF;border-color:var(--ink)}
+  .kscrtabs button.on .n{background:transparent;color:#8FE0B0;border-color:#3A3D42}
+  .kscrtabs .n{font-family:var(--mono);font-size:10px;background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:0 6px;color:var(--muted)}
+  .kbig-screen{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .kbig-row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:9px;padding:10px 14px;font-size:13px;margin-top:8px;flex-wrap:wrap}
+  .kbig-row.best{background:#F4FBF6;border-color:#A6E9C0;margin-top:0}
+  .kbig-row .mono{font-size:11.5px}
+  @media(max-width:980px){.kdesk{flex-direction:column}.krail,.kside{width:100%;border-right:none;border-left:none;border-bottom:1px solid var(--line)}.kthread{max-height:420px}}
+
   footer.note{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   @media(max-width:900px){.ws{flex-direction:column}.side{width:100%;border-right:none;border-bottom:1px solid var(--line)}.ws-grid,.mach{grid-template-columns:1fr}.in-note{margin-left:0}}
 </style>
@@ -302,146 +381,167 @@
     </div>
   </section>
 
-  <!-- ================= WORKSPACE ================= -->
+  <!-- ================= WORKSPACE — KAI'S DESKTOP ================= -->
   <section class="stage" id="v-ws">
     <div class="ws-note">
-      <p>👁 <b>Kai's computer — watch-only.</b> Kai drives; you approve in chat. Nothing here is a form to fill.</p>
+      <p>👁 <b>Kai's desktop — watch-only.</b> Kai drives; you approve in chat. Click the bottle job card, or click his screen to expand it.</p>
       <span class="srbadge">RUNNING ON SOURCEREADY ENTERPRISE</span>
     </div>
-    <div class="ws">
-      <aside class="side">
-        <div class="s-brand">Sourcing<i>GPT</i></div>
-        <div class="grp eyebrow">Jobs</div>
-        <a class="on" id="side-jobs" href="javascript:void(0)">Active <span class="n">3/5</span></a>
-        <a id="side-queue" href="javascript:void(0)">Queued <span class="n">2</span></a>
-        <a id="side-watch" href="javascript:void(0)">Watching <span class="n">1</span></a>
-        <a id="side-arch" href="javascript:void(0)">Archived <span class="n">12</span></a>
-        <div class="grp eyebrow">Kai's computer</div>
-        <a href="javascript:void(0)">Quotes <span class="n" id="nQuotes">0</span></a>
-        <a href="javascript:void(0)">Suppliers</a>
-        <a href="javascript:void(0)">Documents <span class="n" id="nDocs">0</span></a>
-        <a id="side-inbox" href="javascript:void(0)">Inbox <span class="n" id="nMail">0</span></a>
-        <a id="side-qc" href="javascript:void(0)">QC <span class="n" id="nQC">2</span></a>
-        <a href="javascript:void(0)">Payments</a>
-        <div class="grp eyebrow">Your employee</div>
-        <a id="side-profile" href="javascript:void(0)">Buying profile</a>
-        <a id="side-skills" href="javascript:void(0)">Skills <span class="n">4</span></a>
+    <div class="kdesk">
+      <aside class="krail">
+        <div class="kai-id">
+          <div class="kai-av">K</div>
+          <div><b>Kai</b><small>Sourcing employee · <span style="color:var(--accent);font-weight:600">● online</span></small><span class="em">kai@acmegoods.com</span></div>
+        </div>
+        <div class="klbl">Jobs · <span id="kslots">3 of 5 slots</span></div>
+        <div class="kcard price" id="kcardJob">
+          <span class="tag">PRICE</span>
+          <b>32oz bottle — beat $11.20</b>
+          <span class="st" id="kbottleStatus">Brief taking shape</span>
+          <small>closes when: PO cut · <b style="color:var(--accent)">open →</b></small>
+        </div>
+        <div class="kcard amber"><span class="tag">REQUOTE</span><b>Weekender tote</b><span class="st">RFQ out · replies day 2 of 3</span></div>
+        <div class="kcard blue"><span class="tag">QC</span><b>Camp mug — inspection</b><span class="st">SGS on the line Thursday</span></div>
+        <div class="klbl">Queued</div>
+        <div class="kghost trend" id="kqtrend" hidden><span class="tag">TREND</span>Collapsible bottle — test</div>
+        <div class="kghost amber"><span class="tag">REQUOTE</span>Bamboo serving board</div>
+        <div class="klbl">Standing orders</div>
+        <div class="kwatch" id="kwatchBottle" hidden><span class="ic">🕐</span><span><b>Bottle requote — quarterly</b><small>opens a job if the price moves &gt;5%</small></span></div>
+        <div class="kwatch"><span class="ic">🕐</span><span><b>Trend scout — monthly</b><small>one idea max, low MOQ only</small></span></div>
+        <div class="bottom">
+          <div class="klink" id="klink-profile">Buying profile <span>5 learned</span></div>
+          <div class="klink" id="klink-skills">Skills <span>4 unlocked</span></div>
+          <div class="klink" id="klink-arch">Archived <span>12 · scoreboard</span></div>
+        </div>
       </aside>
-      <div class="main">
-        <div id="ws-sub-jobs">
-          <div class="job-head">
-            <h2>Job SGX-0142 · 32 oz stainless bottle</h2>
-            <span class="pill live" id="jobState">Brief</span>
-            <span class="pill">Started in WhatsApp</span>
-            <span class="pill">Closes when: PO cut — or you call it</span>
+      <div class="kchat">
+        <div class="khead"><b>Kai</b><span class="ksync">SYNCED · WHATSAPP + EMAIL — SAME THREAD</span></div>
+        <div class="kthread" id="kthread"></div>
+        <div class="kcomposer"><span style="color:var(--muted);font-weight:600">＋</span><div class="field">Message Kai — or open a new job…</div><span>🎙</span></div>
+      </div>
+      <aside class="kside">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="klbl" style="padding:0">Kai's screen · watch-only</span><button class="kexpand" id="kexpandBtn">⤢ expand</button></div>
+        <div class="kscreen" id="kscreenPrev">
+          <div class="kscr-bar"><span class="dots3"><i></i><i></i><i></i></span><span>SOURCEREADY ENTERPRISE</span><span class="kk">● KAI</span></div>
+          <div class="kscr-body">
+            <b>Compare quotes — SGX-0142</b>
+            <div class="kqrow best"><span>Shenzhen Metalworks</span><span class="p">$8.90 ▸</span></div>
+            <div class="kqrow"><span>Hanoi Steelcraft</span><span class="p">$9.10</span></div>
+            <div class="kqrow"><span>Ningbo Drinkware</span><span class="p">$9.35</span></div>
+            <span style="font-family:var(--mono);font-size:9px;color:var(--muted)">▸ drafting sample order · 11:07:42 · click to expand</span>
           </div>
-          <div class="stages" id="stages"></div>
+        </div>
+        <p class="kcap">Kai works on the <b>same SourceReady platform enterprise teams use</b> — the way a human would. Watch anytime; every action files a receipt. To steer him, talk.</p>
+        <div class="klbl" style="padding:0">Receipts · this job</div>
+        <div id="kreceipts"></div>
+        <div class="kside-foot"><span>RUNNING ON SOURCEREADY ENTERPRISE</span></div>
+      </aside>
+    </div>
+
+    <div class="koverlay" id="kmodal-job" hidden>
+      <div class="kmodal">
+        <div class="km-head"><span class="kmtag">PRICE</span><b>Job SGX-0142 · 32oz stainless bottle</b><span class="pill live" id="jobState">Brief</span><span class="pill">closes when: PO cut</span><button class="km-x" data-kclose>✕</button></div>
+        <div class="km-body">
+          <div class="stages" id="stages" style="margin:0 0 18px"></div>
           <div class="ws-grid">
-            <div class="panelbox">
-              <h4>Quotes — normalized</h4>
-              <div class="pb" id="wsQuotes"><p class="empty">No quotes yet — RFQs not sent.</p></div>
-            </div>
-            <div class="panelbox">
-              <h4>Documents & media</h4>
-              <div class="pb" id="wsDocs"><p class="empty">Nothing filed yet.</p></div>
-            </div>
-            <div class="panelbox">
-              <h4>Payments</h4>
-              <div class="pb" id="wsPay"><p class="empty">No payments on this job.</p></div>
-            </div>
-            <div class="panelbox">
-              <h4>Activity</h4>
-              <div class="pb" id="wsAct"><p class="empty">Waiting for the first ask.</p></div>
-            </div>
+            <div class="panelbox"><h4>Quotes — normalized (<span id="nQuotes">0</span>)</h4><div class="pb" id="wsQuotes"><p class="empty">No quotes yet — RFQs not sent.</p></div></div>
+            <div class="panelbox"><h4>Documents &amp; media (<span id="nDocs">0</span>)</h4><div class="pb" id="wsDocs"><p class="empty">Nothing filed yet.</p></div></div>
+            <div class="panelbox"><h4>Payments</h4><div class="pb" id="wsPay"><p class="empty">No payments on this job.</p></div></div>
+            <div class="panelbox"><h4>Activity</h4><div class="pb" id="wsAct"><p class="empty">Waiting for the first ask.</p></div></div>
           </div>
-          <div class="integr">
-            <span class="ig ok">Shopify ✓ connected</span>
-            <span class="ig ok">MCP key ✓ active</span>
-            <span class="ig soon">QuickBooks — soon</span>
-            <span class="ig soon">Xero — soon</span>
-            <span class="ig soon">NetSuite — soon</span>
-          </div>
+          <div class="integr"><span class="ig ok">Shopify ✓ connected</span><span class="ig ok">MCP key ✓ active</span><span class="ig soon">QuickBooks — soon</span></div>
+          <p class="km-note">watch-only · every number here was filed by Kai, with a receipt · actions live in chat</p>
         </div>
-        <div id="ws-sub-inbox" hidden>
-          <div class="inbox">
-            <div class="in-head">
-              <h2>Inbox</h2>
-              <span class="domain">kai@acmegoods.com</span>
-              <p class="in-note">Your agent works from <b>your own domain</b>. Factories reply to your company — every thread parses into its job, and you're cc'd on everything outbound.</p>
-            </div>
-            <div class="thread-list" id="mailList"></div>
-          </div>
+      </div>
+    </div>
+
+    <div class="koverlay" id="kmodal-screen" hidden>
+      <div class="kmodal">
+        <div class="km-head"><b>Kai's screen</b><span class="ksync">WATCH-ONLY · SOURCEREADY ENTERPRISE</span><button class="km-x" data-kclose>✕</button></div>
+        <div class="kscrtabs">
+          <button id="kscrtab-quotes" class="on">Compare quotes</button>
+          <button id="kscrtab-inbox">Inbox <span class="n" id="nMail">0</span></button>
+          <button id="kscrtab-qc">QC <span class="n" id="nQC">2</span></button>
         </div>
-        <div id="ws-sub-qc" hidden>
-          <div class="qc">
-            <div class="qc-head">
-              <h2>QC & Inspections</h2>
-              <span class="domain">human in the loop · on demand</span>
-              <p class="qc-note">AI finds the factory and talks to it. It can't walk the floor — so a <b>real inspector</b> is ordered like a tool call. You approve the booking; the report files itself to the job.</p>
+        <div class="km-body">
+          <div id="kscr-quotes">
+            <div class="kbig-screen">
+              <div class="kscr-bar" style="padding:9px 14px"><span class="dots3"><i></i><i></i><i></i></span><span>SOURCEREADY ENTERPRISE — QUOTES · SGX-0142</span><span class="kk">● KAI · LIVE</span></div>
+              <div style="padding:16px 18px">
+                <div class="kbig-row best"><span><b>Shenzhen Metalworks</b> · BV audit ✓ · tooling in-house</span><span class="mono" style="color:var(--accent);font-weight:600">$8.90 · MOQ 500 · 30d ▸</span></div>
+                <div class="kbig-row"><span>Hanoi Steelcraft JSC · Vietnam lane</span><span class="mono">$9.10 · MOQ 2,000 · 40d</span></div>
+                <div class="kbig-row"><span>Ningbo Drinkware Ltd. · tooling included</span><span class="mono">$9.35 · MOQ 1,000 · 25d</span></div>
+                <p style="font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:12px">▸ kai@acmegoods.com is drafting the sample order · every click files a receipt · you can watch, not touch</p>
+              </div>
             </div>
-            <div id="qcList"></div>
-            <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas. Testing and audits ride the same rail later.</div>
           </div>
-        </div>
-        <div id="ws-sub-queue" hidden>
-          <p class="subnote">Kai works <b>5 jobs at a time, max</b> — quality over juggling. Queued jobs start the moment a slot frees. Ask for anything; the queue absorbs the ambition.</p>
-          <div class="panelbox">
-            <h4>Queued — next up</h4>
-            <div class="pb">
-              <div class="provline"><span><b>Canvas Weekender Tote</b> — requote</span><span class="mono">from your savings scan · est −16%</span></div>
-              <div class="provline"><span><b>Collapsible bottle</b> — trend test</span><span class="mono">proposed by Kai · you approved in chat</span></div>
+          <div id="kscr-inbox" hidden>
+            <div class="inbox" style="border:1px solid var(--line)">
+              <div class="in-head">
+                <h2>Inbox</h2>
+                <span class="domain">kai@acmegoods.com</span>
+                <p class="in-note">Kai's inbox, on <b>your own domain</b>. Factories reply to your company — every thread parses into its job, and you're cc'd on everything outbound.</p>
+              </div>
+              <div class="thread-list" id="mailList"></div>
+            </div>
+          </div>
+          <div id="kscr-qc" hidden>
+            <div class="qc" style="border:1px solid var(--line)">
+              <div class="qc-head">
+                <h2>QC &amp; Inspections</h2>
+                <span class="domain">human in the loop · on demand</span>
+                <p class="qc-note">Kai can't walk a factory floor — so a <b>real inspector</b> is ordered like a tool call. You approve the booking; the report files itself to the job.</p>
+              </div>
+              <div id="qcList"></div>
+              <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas.</div>
             </div>
           </div>
         </div>
-        <div id="ws-sub-watch" hidden>
-          <p class="subnote">Watches are standing orders — cheap, quiet, and they open a job only when something changes. This is how a closed job keeps earning.</p>
-          <div class="panelbox">
-            <h4>Watching</h4>
-            <div class="pb">
-              <div class="provline"><span><b>32oz bottle</b> — requote every quarter</span><span class="mono">next run Dec 12 · opens a job if price moves &gt;5%</span></div>
-            </div>
-          </div>
-        </div>
-        <div id="ws-sub-arch" hidden>
-          <p class="subnote">Every job ends with a number, not a feeling. Archived jobs stay revivable — "reorder" reopens one with everything remembered.</p>
-          <div class="panelbox">
-            <h4>Archived — the scoreboard</h4>
-            <div class="pb">
-              <div class="provline"><span><b>SGX-0135 · silicone lids</b></span><span class="mono">closed Aug 2 · −14% · <b style="color:var(--good)">$6,200/yr</b></span></div>
-              <div class="provline"><span><b>SGX-0139 · mailer boxes</b></span><span class="mono">closed Jul 18 · −9% · <b style="color:var(--good)">$2,850/yr</b></span></div>
-              <div class="provline"><span><b>SGX-0128 · enamel camp mug</b></span><span class="mono">closed Jun 30 · already at market · $0 — we told you the truth</span></div>
-            </div>
-          </div>
-        </div>
-        <div id="ws-sub-profile" hidden>
+      </div>
+    </div>
+
+    <div class="koverlay" id="kmodal-profile" hidden>
+      <div class="kmodal">
+        <div class="km-head"><b>Buying profile</b><span class="ksync">AUTO-LEARNED · CORRECT IT IN CHAT</span><button class="km-x" data-kclose>✕</button></div>
+        <div class="km-body">
           <p class="subnote">What Kai knows about how you buy. He fills this in as you work — to correct it, <b>just tell him in chat</b>. You can't edit a colleague's notes; you can change their mind.</p>
-          <div class="panelbox">
-            <h4>Buying profile — auto-learned</h4>
-            <div class="pb">
-              <div class="provline"><span>MOQ comfort: <b>≤1,000 units</b> to start a new factory</span><span class="mono">learned · bottle job, Sep 2</span></div>
-              <div class="provline"><span>Shipping: <b>DDP to Chicago</b> preferred</span><span class="mono">you told Kai · Aug 28</span></div>
-              <div class="provline"><span>Compliance: <b>strict</b> — CPSIA/FCC always when applicable</span><span class="mono">set at hire</span></div>
-              <div class="provline"><span>Negotiation: <b>never name a target price first</b></span><span class="mono">learned · your edit, Sep 2</span></div>
-              <div class="provline"><span>Payments: <b>30% deposit max</b> · PayPal for samples</span><span class="mono">learned · sample invoice, Sep 4</span></div>
-            </div>
-          </div>
+          <div class="panelbox"><h4>Learned so far</h4><div class="pb">
+            <div class="provline"><span>MOQ comfort: <b>≤1,000 units</b> to start a new factory</span><span class="mono">learned · bottle job, Sep 2</span></div>
+            <div class="provline"><span>Shipping: <b>DDP to Chicago</b> preferred</span><span class="mono">you told Kai · Aug 28</span></div>
+            <div class="provline"><span>Compliance: <b>strict</b> — CPSIA/FCC always when applicable</span><span class="mono">set at hire</span></div>
+            <div class="provline"><span>Negotiation: <b>never name a target price first</b></span><span class="mono">learned · your edit, Sep 2</span></div>
+            <div class="provline"><span>Payments: <b>30% deposit max</b> · PayPal for samples</span><span class="mono">learned · sample invoice, Sep 4</span></div>
+          </div></div>
         </div>
-        <div id="ws-sub-skills" hidden>
-          <p class="subnote">Kai picks up skills the moment a job needs them — each one curated, priced up front, and always asking before it spends. No feature lists; capability arrives when work demands it.</p>
-          <div class="panelbox">
-            <h4>Unlocked</h4>
-            <div class="pb">
-              <div class="provline"><span><b>RFQ &amp; outreach</b> — emails factories in their language, your domain</span><span class="mono">day one</span></div>
-              <div class="provline"><span><b>Quote normalization</b> — PDF, Excel, WeChat → one table</span><span class="mono">day one</span></div>
-              <div class="provline"><span><b>Sampling &amp; payments</b> — invoices, PayPal, receipts filed</span><span class="mono">unlocked by the bottle job</span></div>
-              <div class="provline"><span><b>Inspection booking</b> — SGS · QIMA · Bureau Veritas</span><span class="mono">unlocked at PO stage</span></div>
-            </div>
-          </div>
-          <div class="integr">
-            <span class="ig soon">Freight booking — unlocks with your first shipment</span>
-            <span class="ig soon">PO financing — unlocks on documented orders</span>
-            <span class="ig soon">Customs docs — soon</span>
-          </div>
+      </div>
+    </div>
+
+    <div class="koverlay" id="kmodal-skills" hidden>
+      <div class="kmodal">
+        <div class="km-head"><b>Skills</b><span class="ksync">UNLOCKED AS JOBS NEED THEM</span><button class="km-x" data-kclose>✕</button></div>
+        <div class="km-body">
+          <p class="subnote">Each skill is curated, priced up front, and always asks before it spends. No feature lists — capability arrives when work demands it.</p>
+          <div class="panelbox"><h4>Unlocked</h4><div class="pb">
+            <div class="provline"><span><b>RFQ &amp; outreach</b> — emails factories in their language, your domain</span><span class="mono">day one</span></div>
+            <div class="provline"><span><b>Quote normalization</b> — PDF, Excel, WeChat → one table</span><span class="mono">day one</span></div>
+            <div class="provline"><span><b>Sampling &amp; payments</b> — invoices, PayPal, receipts filed</span><span class="mono">unlocked by the bottle job</span></div>
+            <div class="provline"><span><b>Inspection booking</b> — SGS · QIMA · Bureau Veritas</span><span class="mono">unlocked at PO stage</span></div>
+          </div></div>
+          <div class="integr"><span class="ig soon">Freight booking — unlocks with your first shipment</span><span class="ig soon">PO financing — unlocks on documented orders</span><span class="ig soon">Customs docs — soon</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="koverlay" id="kmodal-arch" hidden>
+      <div class="kmodal">
+        <div class="km-head"><b>Archived — the scoreboard</b><span class="ksync">EVERY JOB ENDS WITH A NUMBER</span><button class="km-x" data-kclose>✕</button></div>
+        <div class="km-body">
+          <p class="subnote">Closed jobs stay revivable — "reorder" reopens one with everything remembered. The best job ending is a watch.</p>
+          <div class="panelbox"><h4>Recently closed</h4><div class="pb">
+            <div class="provline"><span><b>SGX-0135 · silicone lids</b></span><span class="mono">closed Aug 2 · −14% · <b style="color:var(--good)">$6,200/yr</b></span></div>
+            <div class="provline"><span><b>SGX-0139 · mailer boxes</b></span><span class="mono">closed Jul 18 · −9% · <b style="color:var(--good)">$2,850/yr</b></span></div>
+            <div class="provline"><span><b>SGX-0128 · enamel camp mug</b></span><span class="mono">closed Jun 30 · already at market · $0 — we told you the truth</span></div>
+          </div></div>
         </div>
       </div>
     </div>
@@ -727,6 +827,14 @@
     qc.push({j:"SGX-0139 · mailer boxes",t:"sample check",d:"QIMA · passed Feb 12 · report filed",st:["passed","Passed"]});
     $("nQC").textContent=qc.length;
     $("qcList").innerHTML=qc.map(function(q){return '<div class="insp"><div class="j">'+q.j+'<small>'+q.t+'</small></div><div class="d">'+q.d+'</div><span class="stpill '+q.st[0]+'">'+q.st[1]+"</span></div>"}).join("");
+    /* kai desktop */
+    var kt=$("kthread");if(kt){kt.innerHTML=h;kt.scrollTop=kt.scrollHeight}
+    var kst=["Brief taking shape","RFQ out — you're cc'd","● Quotes in · your call","Samples paid · en route","PO cut — $44,500","SGS inspection booked","Delivered ✓ · $11,500/yr"];
+    var kb=$("kbottleStatus");if(kb){kb.textContent=kst[st];kb.style.color=st>=2?"#149A4E":"#6A6F74"}
+    var kq2=$("kqtrend");if(kq2)kq2.hidden=step<6;
+    var ks=$("kslots");if(ks)ks.textContent=(step>=6?"4":"3")+" of 5 slots";
+    var kw=$("kwatchBottle");if(kw)kw.hidden=step<11;
+    var kr=$("kreceipts");if(kr){var rh="";for(var s4=step;s4>=0&&s4>step-4;s4--)rh+='<div class="krec">'+actAt[s4]+"</div>";kr.innerHTML=rh}
   }
 
   $("next").onclick=function(){if(step<MAX){step++;render()}};
@@ -736,14 +844,21 @@
 
   var VIEWS=["agent","ws","shop","engine","mach"];
   var vb=$("views").querySelectorAll("button");
-  var SUBS=["jobs","inbox","qc","queue","watch","arch","profile","skills"];
-  function wsView(s){
-    SUBS.forEach(function(x){
-      $("ws-sub-"+x).hidden=x!==s;
-      $("side-"+x).classList.toggle("on",x===s);
-    });
-  }
-  SUBS.forEach(function(s){$("side-"+s).onclick=function(){wsView(s)}});
+  /* kai desktop modals */
+  var KMODALS=["kmodal-job","kmodal-screen","kmodal-profile","kmodal-skills","kmodal-arch"];
+  function kClose(){KMODALS.forEach(function(x){$(x).hidden=true})}
+  function kOpen(id){KMODALS.forEach(function(x){$(x).hidden=x!==id})}
+  KMODALS.forEach(function(x){$(x).addEventListener("click",function(e){if(e.target===this)kClose()})});
+  document.querySelectorAll("[data-kclose]").forEach(function(b){b.onclick=kClose});
+  $("kcardJob").onclick=function(){kOpen("kmodal-job")};
+  $("kscreenPrev").onclick=function(){kOpen("kmodal-screen")};
+  $("kexpandBtn").onclick=function(){kOpen("kmodal-screen")};
+  $("klink-profile").onclick=function(){kOpen("kmodal-profile")};
+  $("klink-skills").onclick=function(){kOpen("kmodal-skills")};
+  $("klink-arch").onclick=function(){kOpen("kmodal-arch")};
+  function kscrTab(t){["quotes","inbox","qc"].forEach(function(x){$("kscr-"+x).hidden=x!==t;$("kscrtab-"+x).classList.toggle("on",x===t)})}
+  ["quotes","inbox","qc"].forEach(function(t){$("kscrtab-"+t).onclick=function(){kscrTab(t)}});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")kClose()});
   function activate(v){
     vb.forEach(function(x){x.classList.toggle("on",x.dataset.v===v)});
     var isRef=v==="mach"||v==="shop"||v==="engine";
@@ -753,12 +868,16 @@
     /* presenting flows first step → last on each surface: entering a story
        surface always restarts the story from the beginning */
     if(v==="agent"||v==="ws"){step=0;lastMail=0;render()}
-    if(v==="ws")wsView("jobs");
+    kClose();
     if(history.replaceState)history.replaceState(null,"","#"+v);
   }
   vb.forEach(function(b){b.onclick=function(){activate(b.dataset.v)}});
   var h=location.hash.replace("#","");
-  if(SUBS.indexOf(h)>=0&&h!=="jobs"){activate("ws");wsView(h)}
+  if(h==="inbox"||h==="qc"){activate("ws");kOpen("kmodal-screen");kscrTab(h)}
+  else if(h==="profile"||h==="skills"||h==="arch"){activate("ws");kOpen("kmodal-"+h)}
+  else if(h==="job"){activate("ws");kOpen("kmodal-job")}
+  else if(h==="screen"){activate("ws");kOpen("kmodal-screen")}
+  else if(h==="queue"||h==="watch"){activate("ws")}
   else if(VIEWS.indexOf(h)>=0)activate(h);
   var sp=null;
   try{sp=new URLSearchParams(location.search).get("step")}catch(e){}
