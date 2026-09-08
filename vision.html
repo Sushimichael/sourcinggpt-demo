@@ -265,7 +265,8 @@
   /* ---------- kai desktop ---------- */
   .kdesk{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:620px}
   .krail{width:288px;flex-shrink:0;background:#FAFBFA;border-right:1px solid var(--line);padding:16px 14px;display:flex;flex-direction:column;gap:10px}
-  .kai-id{display:flex;gap:11px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .kai-id{display:flex;gap:11px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line);cursor:pointer}
+  .kai-id:hover b{color:var(--accent)}
   .kai-av{width:42px;height:42px;border-radius:50%;background:#3ECF6E;color:#0B3A20;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:17px;flex-shrink:0}
   .kai-id b{font-size:15px;display:block}
   .kai-id small{font-size:11.5px;color:var(--muted);display:block}
@@ -284,6 +285,19 @@
   .kghost .tag{font-family:var(--mono);font-size:9px;border-radius:5px;padding:2px 6px}
   .kghost.trend .tag{color:#7C3AED;background:#F1EAFE}
   .kcard.focus,.kghost.focus{border-color:#3ECF6E;box-shadow:0 0 0 2px rgba(62,207,110,.22)}
+  .skgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .skcard{display:flex;gap:11px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;align-items:flex-start;background:#FFF}
+  .skico{font-size:20px;padding-top:1px;flex-shrink:0}
+  .skcard b{font-size:13px;display:block}
+  .skcard p{font-size:11.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+  .skstat{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;border-radius:5px;padding:2px 7px;white-space:nowrap;margin-left:auto;flex-shrink:0;color:var(--muted);background:var(--chip);border:1px solid var(--line)}
+  .skstat.on{color:var(--good);background:var(--good-soft);border-color:#A6E9C0}
+  .skfeat{display:flex;gap:14px;align-items:flex-start;border:2px solid var(--accent);background:var(--accent-soft);border-radius:14px;padding:16px 18px;margin-top:4px}
+  .skfeat .skico{font-size:30px}
+  .skfeat b{font-size:15px}
+  .skfeat p{font-size:12.5px;color:var(--ink);line-height:1.5;margin-top:3px;max-width:560px}
+  .sktagf{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;color:#0B3A20;background:#3ECF6E;border-radius:5px;padding:2px 8px;margin-left:6px}
+  @media(max-width:700px){.skgrid{grid-template-columns:1fr}}
   .kfoc{display:none;font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;color:#0B3A20;background:#3ECF6E;border-radius:5px;padding:2px 7px;white-space:nowrap}
   .focus .kfoc{display:inline-flex}
   .kghost.amber .tag{color:#8A5800;background:#FBF2DF}
@@ -443,7 +457,7 @@
     </div>
     <div class="kdesk">
       <aside class="krail">
-        <div class="kai-id">
+        <div class="kai-id" id="kaiIdBtn" title="Buying profile — what Kai knows about you">
           <div class="kai-av">K</div>
           <div><b>Kai</b><small>Sourcing employee · <span style="color:var(--accent);font-weight:600">● online</span></small><span class="em">kai@acmegoods.com</span></div>
         </div>
@@ -459,9 +473,6 @@
         <div class="klbl">Queued</div>
         <div class="kghost trend" id="kqtrend" hidden><span class="tag">TREND</span>Collapsible bottle — test <span class="kfoc">💬 DISCUSSING</span></div>
         <div class="kghost amber"><span class="tag">REQUOTE</span>Bamboo serving board</div>
-        <div class="klbl">Watches — no POs, just eyes</div>
-        <div class="kwatch" id="kwatchBottle" hidden><span class="ic">🕐</span><span><b>Bottle requote — quarterly</b><small>opens a job if the price moves &gt;5%</small></span></div>
-        <div class="kwatch"><span class="ic">🕐</span><span><b>Trend scout — monthly</b><small>one idea max, low MOQ only</small></span></div>
         <div class="bottom">
           <div class="klink" id="klink-profile">Buying profile <span>5 learned</span></div>
           <div class="klink" id="klink-skills">Skills <span>4 unlocked</span></div>
@@ -488,6 +499,9 @@
         <p class="kcap">Kai works on the <b>same SourceReady platform enterprise teams use</b> — the way a human would. Watch anytime; every action files a receipt. To steer him, talk.</p>
         <div class="klbl" style="padding:0">Receipts · this job</div>
         <div id="kreceipts"></div>
+        <div class="klbl" style="padding:8px 0 0">Watches — no POs, just eyes</div>
+        <div class="kwatch" id="kwatchBottle" hidden><span class="ic">🕐</span><span><b>Bottle requote — quarterly</b><small>opens a job if the price moves &gt;5%</small></span></div>
+        <div class="kwatch"><span class="ic">🕐</span><span><b>Trend scout — monthly</b><small>one idea max, low MOQ only</small></span></div>
         <div class="kside-foot"><span>RUNNING ON SOURCEREADY ENTERPRISE</span></div>
       </aside>
     </div>
@@ -622,19 +636,38 @@
       <div class="kmodal">
         <div class="km-head"><b>Skills</b><span class="ksync">UNLOCKED AS JOBS NEED THEM</span><button class="km-x" data-kclose>✕</button></div>
         <div class="km-body">
-          <p class="subnote">Each skill is curated, priced up front, and always asks before it spends. No feature lists — capability arrives when work demands it.</p>
-          <div class="panelbox"><h4>Unlocked</h4><div class="pb">
-            <div class="provline"><span><b>RFQ &amp; outreach</b> — emails factories in their language, your domain</span><span class="mono">day one</span></div>
-            <div class="provline"><span><b>Quote normalization</b> — PDF, Excel, WeChat → one table</span><span class="mono">day one</span></div>
-            <div class="provline"><span><b>Sampling &amp; payments</b> — invoices, PayPal, receipts filed</span><span class="mono">unlocked by the bottle job</span></div>
-            <div class="provline"><span><b>Inspection booking</b> — dispatches a vetted human · SGS · QIMA · BV</span><span class="mono">unlocked at PO stage</span></div>
-          </div></div>
-          <div class="panelbox" style="margin-top:14px"><h4>Connections — access you've granted him</h4><div class="pb">
+          <p class="subnote">Skills add themselves the moment a job needs them — no setup, nothing to configure. This catalog is also the honest answer to <b>"what can my employee actually do?"</b></p>
+          <div class="skfeat">
+            <span class="skico">👷</span>
+            <div>
+              <b>Hire a Human <span class="sktagf">FLAGSHIP</span></b>
+              <p>Real inspectors, auditors and lab techs — booked like a tool call. SGS · QIMA · Bureau Veritas. Price shown before you approve (inspections from $299); a named human walks the floor; the report files itself to your job.</p>
+            </div>
+            <span class="skstat on">✓ UNLOCKED</span>
+          </div>
+          <div class="klbl" style="padding:14px 0 8px">WORKING FOR YOU NOW</div>
+          <div class="skgrid">
+            <div class="skcard"><span class="skico">📡</span><div><b>RFQ &amp; Outreach</b><p>Emails factories in their language, from your domain — chased until answered.</p></div><span class="skstat on">✓ DAY ONE</span></div>
+            <div class="skcard"><span class="skico">📊</span><div><b>Quote Normalization</b><p>PDF, Excel, WeChat screenshots → one comparable table, FOB USD.</p></div><span class="skstat on">✓ DAY ONE</span></div>
+            <div class="skcard"><span class="skico">🧪</span><div><b>Sampling &amp; Payments</b><p>Sample invoices paid by PayPal, receipts filed, couriers tracked.</p></div><span class="skstat on">✓ BOTTLE JOB</span></div>
+            <div class="skcard"><span class="skico">📋</span><div><b>PO Generator</b><p>Cuts clean POs with your terms — or drafts them inside your QuickBooks.</p></div><span class="skstat on">✓ PO STAGE</span></div>
+          </div>
+          <div class="klbl" style="padding:14px 0 8px">ADDS WITH YOUR NEXT JOBS</div>
+          <div class="skgrid">
+            <div class="skcard"><span class="skico">🧾</span><div><b>Quotation Builder</b><p>Quote your own customers — store products + live factory costs, your letterhead.</p></div><span class="skstat">AUTO-ADDS</span></div>
+            <div class="skcard"><span class="skico">🧱</span><div><b>BOM Builder</b><p>Splits a product into parts so Kai can negotiate piece by piece.</p></div><span class="skstat">AUTO-ADDS</span></div>
+            <div class="skcard"><span class="skico">🚢</span><div><b>Shipping Quotes</b><p>Live freight rates for your lane, across forwarders, in minutes.</p></div><span class="skstat">AUTO-ADDS</span></div>
+            <div class="skcard"><span class="skico">📦</span><div><b>Freight Booking</b><p>Books it, tracks it, files the customs documents.</p></div><span class="skstat">COMING</span></div>
+            <div class="skcard"><span class="skico">💰</span><div><b>PO Financing</b><p>Pay the factory later, on fully documented orders.</p></div><span class="skstat">COMING</span></div>
+            <div class="skcard"><span class="skico">🛃</span><div><b>Customs Docs</b><p>Commercial invoice, packing list, HS codes — generated and checked.</p></div><span class="skstat">COMING</span></div>
+          </div>
+          <div class="klbl" style="padding:14px 0 8px">CONNECTIONS — ACCESS YOU'VE GRANTED HIM</div>
+          <div class="panelbox"><div class="pb">
             <div class="provline"><span><b>PayPal</b> — pays sample invoices</span><span class="mono">cap: $200 without asking · granted Sep 4</span></div>
             <div class="provline"><span><b>Gmail</b> — sends as kai@acmegoods.com</span><span class="mono">chasers auto · anything with numbers asks</span></div>
             <div class="provline"><span><b>Shopify</b> — reads catalog, costs &amp; volumes</span><span class="mono">read-only · granted at install</span></div>
+            <div class="provline"><span><b>QuickBooks · Xero</b> — Kai drafts POs in your books</span><span class="mono">coming — you approve there, it syncs back</span></div>
           </div></div>
-          <div class="integr"><span class="ig soon">Freight booking — unlocks with your first shipment</span><span class="ig soon">PO financing — unlocks on documented orders</span><span class="ig soon">QuickBooks · Xero — Kai drafts POs in your books</span><span class="ig soon">Customs docs — soon</span></div>
         </div>
       </div>
     </div>
@@ -964,6 +997,7 @@
   $("kscreenPrev").onclick=function(){kOpen("kmodal-screen")};
   $("kexpandBtn").onclick=function(){kOpen("kmodal-screen")};
   $("klink-profile").onclick=function(){kOpen("kmodal-profile")};
+  $("kaiIdBtn").onclick=function(){kOpen("kmodal-profile")};
   $("klink-skills").onclick=function(){kOpen("kmodal-skills")};
   $("klink-arch").onclick=function(){kOpen("kmodal-arch")};
   function kscrTab(t){["quotes","inbox","qc"].forEach(function(x){$("kscr-"+x).hidden=x!==t;$("kscrtab-"+x).classList.toggle("on",x===t)})}
