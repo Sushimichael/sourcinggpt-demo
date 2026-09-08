@@ -214,8 +214,6 @@
     <nav class="views" id="views">
       <button data-v="agent" class="on">Agent</button>
       <button data-v="ws">Workspace</button>
-      <button data-v="inbox">Inbox</button>
-      <button data-v="qc">QC</button>
       <button data-v="shop">Shopify app</button>
       <button data-v="mach">For machines</button>
     </nav>
@@ -228,7 +226,7 @@
     <button id="back">◂ Back</button>
     <button id="next" class="primary">Play next ▸</button>
     <button id="skip">Skip to end</button>
-    <span class="refnote" id="refnote" hidden>Reference view — the story plays in Agent, Workspace, Inbox and QC.</span>
+    <span class="refnote" id="refnote" hidden>Reference view — the story plays in Agent and Workspace (Inbox &amp; QC live inside the Workspace).</span>
   </div>
 
   <!-- ================= AGENT ================= -->
@@ -250,74 +248,72 @@
     <div class="ws">
       <aside class="side">
         <div class="s-brand">Sourcing<i>GPT</i></div>
-        <a class="on" href="javascript:void(0)">Jobs <span class="n">4</span></a>
+        <a class="on" id="side-jobs" href="javascript:void(0)">Jobs <span class="n">4</span></a>
         <a href="javascript:void(0)">Quotes <span class="n" id="nQuotes">0</span></a>
         <a href="javascript:void(0)">Suppliers</a>
         <a href="javascript:void(0)">Documents <span class="n" id="nDocs">0</span></a>
-        <a href="javascript:void(0)">Inbox <span class="n" id="nMail">0</span></a>
-        <a href="javascript:void(0)">QC <span class="n" id="nQC">2</span></a>
+        <a id="side-inbox" href="javascript:void(0)">Inbox <span class="n" id="nMail">0</span></a>
+        <a id="side-qc" href="javascript:void(0)">QC <span class="n" id="nQC">2</span></a>
         <a href="javascript:void(0)">Payments</a>
         <div class="grp eyebrow">Settings</div>
         <a href="javascript:void(0)">Integrations</a>
       </aside>
       <div class="main">
-        <div class="job-head">
-          <h2>Job SGX-0142 · 32 oz stainless bottle</h2>
-          <span class="pill live" id="jobState">Brief</span>
-          <span class="pill">Started in WhatsApp</span>
+        <div id="ws-sub-jobs">
+          <div class="job-head">
+            <h2>Job SGX-0142 · 32 oz stainless bottle</h2>
+            <span class="pill live" id="jobState">Brief</span>
+            <span class="pill">Started in WhatsApp</span>
+          </div>
+          <div class="stages" id="stages"></div>
+          <div class="ws-grid">
+            <div class="panelbox">
+              <h4>Quotes — normalized</h4>
+              <div class="pb" id="wsQuotes"><p class="empty">No quotes yet — RFQs not sent.</p></div>
+            </div>
+            <div class="panelbox">
+              <h4>Documents & media</h4>
+              <div class="pb" id="wsDocs"><p class="empty">Nothing filed yet.</p></div>
+            </div>
+            <div class="panelbox">
+              <h4>Payments</h4>
+              <div class="pb" id="wsPay"><p class="empty">No payments on this job.</p></div>
+            </div>
+            <div class="panelbox">
+              <h4>Activity</h4>
+              <div class="pb" id="wsAct"><p class="empty">Waiting for the first ask.</p></div>
+            </div>
+          </div>
+          <div class="integr">
+            <span class="ig ok">Shopify ✓ connected</span>
+            <span class="ig ok">MCP key ✓ active</span>
+            <span class="ig soon">QuickBooks — soon</span>
+            <span class="ig soon">Xero — soon</span>
+            <span class="ig soon">NetSuite — soon</span>
+          </div>
         </div>
-        <div class="stages" id="stages"></div>
-        <div class="ws-grid">
-          <div class="panelbox">
-            <h4>Quotes — normalized</h4>
-            <div class="pb" id="wsQuotes"><p class="empty">No quotes yet — RFQs not sent.</p></div>
-          </div>
-          <div class="panelbox">
-            <h4>Documents & media</h4>
-            <div class="pb" id="wsDocs"><p class="empty">Nothing filed yet.</p></div>
-          </div>
-          <div class="panelbox">
-            <h4>Payments</h4>
-            <div class="pb" id="wsPay"><p class="empty">No payments on this job.</p></div>
-          </div>
-          <div class="panelbox">
-            <h4>Activity</h4>
-            <div class="pb" id="wsAct"><p class="empty">Waiting for the first ask.</p></div>
+        <div id="ws-sub-inbox" hidden>
+          <div class="inbox">
+            <div class="in-head">
+              <h2>Inbox</h2>
+              <span class="domain">kai@acmegoods.com</span>
+              <p class="in-note">Your agent works from <b>your own domain</b>. Factories reply to your company — every thread parses into its job, and you're cc'd on everything outbound.</p>
+            </div>
+            <div class="thread-list" id="mailList"></div>
           </div>
         </div>
-        <div class="integr">
-          <span class="ig ok">Shopify ✓ connected</span>
-          <span class="ig ok">MCP key ✓ active</span>
-          <span class="ig soon">QuickBooks — soon</span>
-          <span class="ig soon">Xero — soon</span>
-          <span class="ig soon">NetSuite — soon</span>
+        <div id="ws-sub-qc" hidden>
+          <div class="qc">
+            <div class="qc-head">
+              <h2>QC & Inspections</h2>
+              <span class="domain">human in the loop · on demand</span>
+              <p class="qc-note">AI finds the factory and talks to it. It can't walk the floor — so a <b>real inspector</b> is ordered like a tool call. You approve the booking; the report files itself to the job.</p>
+            </div>
+            <div id="qcList"></div>
+            <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas. Testing and audits ride the same rail later.</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= INBOX ================= -->
-  <section class="stage" id="v-inbox">
-    <div class="inbox">
-      <div class="in-head">
-        <h2>Inbox</h2>
-        <span class="domain">kai@acmegoods.com</span>
-        <p class="in-note">Your agent works from <b>your own domain</b>. Factories reply to your company — every thread parses into its job, and you're cc'd on everything outbound.</p>
-      </div>
-      <div class="thread-list" id="mailList"></div>
-    </div>
-  </section>
-
-  <!-- ================= QC ================= -->
-  <section class="stage" id="v-qc">
-    <div class="qc">
-      <div class="qc-head">
-        <h2>QC & Inspections</h2>
-        <span class="domain">human in the loop · on demand</span>
-        <p class="qc-note">AI finds the factory and talks to it. It can't walk the floor — so a <b>real inspector</b> is ordered like a tool call. You approve the booking; the report files itself to the job.</p>
-      </div>
-      <div id="qcList"></div>
-      <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas. Testing and audits ride the same rail later.</div>
     </div>
   </section>
 
@@ -395,7 +391,7 @@
     </div>
   </section>
 
-  <footer class="note">Concept demo · SourcingGPT v2 · same job, five surfaces — chat, workspace, inbox, Shopify app, machines</footer>
+  <footer class="note">Concept demo · SourcingGPT v2 · same job, every surface — agent (mobile &amp; email) · workspace (inbox · QC) · Shopify app · machines</footer>
 </div>
 
 <script>
@@ -513,19 +509,32 @@
   $("skip").onclick=function(){step=MAX;render()};
   document.addEventListener("keydown",function(e){if(e.key==="ArrowRight")$("next").click();if(e.key==="ArrowLeft")$("back").click()});
 
-  var VIEWS=["agent","ws","inbox","qc","shop","mach"];
+  var VIEWS=["agent","ws","shop","mach"];
   var vb=$("views").querySelectorAll("button");
+  var SUBS=["jobs","inbox","qc"];
+  function wsView(s){
+    SUBS.forEach(function(x){
+      $("ws-sub-"+x).hidden=x!==s;
+      $("side-"+x).classList.toggle("on",x===s);
+    });
+  }
+  SUBS.forEach(function(s){$("side-"+s).onclick=function(){wsView(s)}});
   function activate(v){
     vb.forEach(function(x){x.classList.toggle("on",x.dataset.v===v)});
     var isRef=v==="mach"||v==="shop";
     document.getElementById("ctrls").classList.toggle("static",isRef);
     document.getElementById("refnote").hidden=!isRef;
     VIEWS.forEach(function(x){document.getElementById("v-"+x).classList.toggle("on",x===v)});
+    /* presenting flows first step → last on each surface: entering a story
+       surface always restarts the story from the beginning */
+    if(v==="agent"||v==="ws"){step=0;lastMail=0;render()}
+    if(v==="ws")wsView("jobs");
     if(history.replaceState)history.replaceState(null,"","#"+v);
   }
   vb.forEach(function(b){b.onclick=function(){activate(b.dataset.v)}});
   var h=location.hash.replace("#","");
-  if(VIEWS.indexOf(h)>=0)activate(h);
+  if(h==="inbox"||h==="qc"){activate("ws");wsView(h)}
+  else if(VIEWS.indexOf(h)>=0)activate(h);
 
   render();
 })();
