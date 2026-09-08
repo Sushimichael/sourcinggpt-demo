@@ -204,6 +204,64 @@
   .shopstep img{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;display:block;background:#FFF}
   .ctrls.static #back,.ctrls.static #next,.ctrls.static #skip,.ctrls.static .dots{display:none}
 
+  /* ---------- workspace note + employee panels ---------- */
+  .ws-note{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 16px;margin-bottom:14px;flex-wrap:wrap}
+  .ws-note p{font-size:12.5px;color:var(--muted)}
+  .ws-note p b{color:var(--ink)}
+  .srbadge{font-family:var(--mono);font-size:10px;letter-spacing:.08em;border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--muted);white-space:nowrap}
+  .provline{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px;flex-wrap:wrap}
+  .provline:last-child{border-bottom:none}
+  .provline .mono{font-size:10px;color:var(--muted)}
+  .subnote{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+
+  /* ---------- engine ---------- */
+  .engine{background:#131416;border-radius:16px;padding:32px 38px 22px;color:#EDEFEC;overflow:hidden}
+  .en-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px 20px;flex-wrap:wrap}
+  .en-kick{display:flex;align-items:center;gap:9px}
+  .en-kick i{width:8px;height:8px;border-radius:50%;background:#3ECF6E;animation:enpulse 2s infinite}
+  @keyframes enpulse{0%,100%{opacity:1}50%{opacity:.3}}
+  @media (prefers-reduced-motion:reduce){.en-kick i{animation:none}}
+  .en-kick span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:#3ECF6E}
+  .engine h2{font-family:var(--display);font-weight:800;font-size:33px;letter-spacing:-.02em;margin-top:9px}
+  .en-sub{font-size:14.5px;color:#8B9096;margin-top:5px}
+  .en-audit{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:#8B9096;text-align:right;line-height:1.9}
+  .en-pipe{border-top:1px solid #26282B;border-bottom:1px solid #26282B;margin-top:22px;padding:17px 0 19px}
+  .en-pipe .pl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#8B9096}
+  .en-stages{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;align-items:flex-start}
+  .en-st{flex:1;min-width:128px}
+  .en-st b{font-size:14px;display:block;color:#EDEFEC}
+  .en-st.last b{color:#3ECF6E}
+  .en-st small{font-size:12px;color:#8B9096}
+  .en-arrow{color:#3ECF6E;font-family:var(--mono);font-size:13px;padding-top:1px}
+  .en-wow{display:flex;border-bottom:1px solid #26282B;padding:24px 0 20px;flex-wrap:wrap;gap:20px 0}
+  .en-w{flex:1;min-width:250px;padding-right:32px}
+  .en-w+.en-w{border-left:1px solid #26282B;padding-left:32px}
+  .en-w .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#8B9096}
+  .en-w .big{font-family:var(--display);font-weight:800;font-size:62px;letter-spacing:-.03em;line-height:1.06;color:#3ECF6E;margin-top:3px}
+  .en-w .big small{font-size:33px;letter-spacing:0;font-weight:800}
+  .en-w.neutral .big{color:#EDEFEC}
+  .en-w .l1{font-size:13.5px;color:#EDEFEC;margin-top:3px}
+  .en-w .l2{font-size:12.5px;color:#8B9096;margin-top:2px}
+  .en-meters{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:22px 0;border-bottom:1px solid #26282B}
+  .en-m .mrow{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .en-m .mrow b{font-size:20px;font-weight:700;letter-spacing:-.01em}
+  .en-m .mrow span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:#8B9096}
+  .en-bar{height:3px;background:#26282B;border-radius:99px;margin:8px 0 7px}
+  .en-bar i{display:block;height:3px;background:#3ECF6E;border-radius:99px}
+  .en-m p{font-size:12px;color:#8B9096;line-height:1.45}
+  .en-live{padding:19px 0 10px}
+  .en-live .lh{display:flex;gap:10px;align-items:baseline}
+  .en-live .lh b{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#3ECF6E;font-weight:500}
+  .en-live .lh span{font-size:12px;color:#8B9096}
+  .en-ev{display:flex;gap:14px;align-items:baseline;margin-top:9px;font-size:13px;flex-wrap:wrap}
+  .en-ev .t{font-family:var(--mono);font-size:11.5px;color:#8B9096;width:44px;flex-shrink:0}
+  .en-ev .g{color:#3ECF6E;font-weight:600}
+  .en-ev .a{color:#FFB224;font-weight:600}
+  .en-ev .d{color:#8B9096}
+  .en-foot{display:flex;justify-content:space-between;gap:6px 16px;border-top:1px solid #26282B;margin-top:16px;padding-top:13px;padding-bottom:4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:#8B9096;flex-wrap:wrap}
+  .en-foot .gpt{color:#3ECF6E}
+  @media(max-width:900px){.en-meters{grid-template-columns:1fr 1fr}.en-w{min-width:200px}.en-w+.en-w{border-left:none;padding-left:0}.en-audit{text-align:left}}
+
   footer.note{text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   @media(max-width:900px){.ws{flex-direction:column}.side{width:100%;border-right:none;border-bottom:1px solid var(--line)}.ws-grid,.mach{grid-template-columns:1fr}.in-note{margin-left:0}}
 </style>
@@ -215,6 +273,7 @@
       <button data-v="agent" class="on">Agent</button>
       <button data-v="ws">Workspace</button>
       <button data-v="shop">Shopify app</button>
+      <button data-v="engine">The engine</button>
       <button data-v="mach">For machines</button>
     </nav>
     <a class="backsite" href="index.html">← Back to site</a>
@@ -245,18 +304,28 @@
 
   <!-- ================= WORKSPACE ================= -->
   <section class="stage" id="v-ws">
+    <div class="ws-note">
+      <p>👁 <b>Kai's computer — watch-only.</b> Kai drives; you approve in chat. Nothing here is a form to fill.</p>
+      <span class="srbadge">RUNNING ON SOURCEREADY ENTERPRISE</span>
+    </div>
     <div class="ws">
       <aside class="side">
         <div class="s-brand">Sourcing<i>GPT</i></div>
-        <a class="on" id="side-jobs" href="javascript:void(0)">Jobs <span class="n">4</span></a>
+        <div class="grp eyebrow">Jobs</div>
+        <a class="on" id="side-jobs" href="javascript:void(0)">Active <span class="n">3/5</span></a>
+        <a id="side-queue" href="javascript:void(0)">Queued <span class="n">2</span></a>
+        <a id="side-watch" href="javascript:void(0)">Watching <span class="n">1</span></a>
+        <a id="side-arch" href="javascript:void(0)">Archived <span class="n">12</span></a>
+        <div class="grp eyebrow">Kai's computer</div>
         <a href="javascript:void(0)">Quotes <span class="n" id="nQuotes">0</span></a>
         <a href="javascript:void(0)">Suppliers</a>
         <a href="javascript:void(0)">Documents <span class="n" id="nDocs">0</span></a>
         <a id="side-inbox" href="javascript:void(0)">Inbox <span class="n" id="nMail">0</span></a>
         <a id="side-qc" href="javascript:void(0)">QC <span class="n" id="nQC">2</span></a>
         <a href="javascript:void(0)">Payments</a>
-        <div class="grp eyebrow">Settings</div>
-        <a href="javascript:void(0)">Integrations</a>
+        <div class="grp eyebrow">Your employee</div>
+        <a id="side-profile" href="javascript:void(0)">Buying profile</a>
+        <a id="side-skills" href="javascript:void(0)">Skills <span class="n">4</span></a>
       </aside>
       <div class="main">
         <div id="ws-sub-jobs">
@@ -264,6 +333,7 @@
             <h2>Job SGX-0142 · 32 oz stainless bottle</h2>
             <span class="pill live" id="jobState">Brief</span>
             <span class="pill">Started in WhatsApp</span>
+            <span class="pill">Closes when: PO cut — or you call it</span>
           </div>
           <div class="stages" id="stages"></div>
           <div class="ws-grid">
@@ -313,6 +383,66 @@
             <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas. Testing and audits ride the same rail later.</div>
           </div>
         </div>
+        <div id="ws-sub-queue" hidden>
+          <p class="subnote">Kai works <b>5 jobs at a time, max</b> — quality over juggling. Queued jobs start the moment a slot frees. Ask for anything; the queue absorbs the ambition.</p>
+          <div class="panelbox">
+            <h4>Queued — next up</h4>
+            <div class="pb">
+              <div class="provline"><span><b>Canvas Weekender Tote</b> — requote</span><span class="mono">from your savings scan · est −16%</span></div>
+              <div class="provline"><span><b>Collapsible bottle</b> — trend test</span><span class="mono">proposed by Kai · you approved in chat</span></div>
+            </div>
+          </div>
+        </div>
+        <div id="ws-sub-watch" hidden>
+          <p class="subnote">Watches are standing orders — cheap, quiet, and they open a job only when something changes. This is how a closed job keeps earning.</p>
+          <div class="panelbox">
+            <h4>Watching</h4>
+            <div class="pb">
+              <div class="provline"><span><b>32oz bottle</b> — requote every quarter</span><span class="mono">next run Dec 12 · opens a job if price moves &gt;5%</span></div>
+            </div>
+          </div>
+        </div>
+        <div id="ws-sub-arch" hidden>
+          <p class="subnote">Every job ends with a number, not a feeling. Archived jobs stay revivable — "reorder" reopens one with everything remembered.</p>
+          <div class="panelbox">
+            <h4>Archived — the scoreboard</h4>
+            <div class="pb">
+              <div class="provline"><span><b>SGX-0135 · silicone lids</b></span><span class="mono">closed Aug 2 · −14% · <b style="color:var(--good)">$6,200/yr</b></span></div>
+              <div class="provline"><span><b>SGX-0139 · mailer boxes</b></span><span class="mono">closed Jul 18 · −9% · <b style="color:var(--good)">$2,850/yr</b></span></div>
+              <div class="provline"><span><b>SGX-0128 · enamel camp mug</b></span><span class="mono">closed Jun 30 · already at market · $0 — we told you the truth</span></div>
+            </div>
+          </div>
+        </div>
+        <div id="ws-sub-profile" hidden>
+          <p class="subnote">What Kai knows about how you buy. He fills this in as you work — to correct it, <b>just tell him in chat</b>. You can't edit a colleague's notes; you can change their mind.</p>
+          <div class="panelbox">
+            <h4>Buying profile — auto-learned</h4>
+            <div class="pb">
+              <div class="provline"><span>MOQ comfort: <b>≤1,000 units</b> to start a new factory</span><span class="mono">learned · bottle job, Sep 2</span></div>
+              <div class="provline"><span>Shipping: <b>DDP to Chicago</b> preferred</span><span class="mono">you told Kai · Aug 28</span></div>
+              <div class="provline"><span>Compliance: <b>strict</b> — CPSIA/FCC always when applicable</span><span class="mono">set at hire</span></div>
+              <div class="provline"><span>Negotiation: <b>never name a target price first</b></span><span class="mono">learned · your edit, Sep 2</span></div>
+              <div class="provline"><span>Payments: <b>30% deposit max</b> · PayPal for samples</span><span class="mono">learned · sample invoice, Sep 4</span></div>
+            </div>
+          </div>
+        </div>
+        <div id="ws-sub-skills" hidden>
+          <p class="subnote">Kai picks up skills the moment a job needs them — each one curated, priced up front, and always asking before it spends. No feature lists; capability arrives when work demands it.</p>
+          <div class="panelbox">
+            <h4>Unlocked</h4>
+            <div class="pb">
+              <div class="provline"><span><b>RFQ &amp; outreach</b> — emails factories in their language, your domain</span><span class="mono">day one</span></div>
+              <div class="provline"><span><b>Quote normalization</b> — PDF, Excel, WeChat → one table</span><span class="mono">day one</span></div>
+              <div class="provline"><span><b>Sampling &amp; payments</b> — invoices, PayPal, receipts filed</span><span class="mono">unlocked by the bottle job</span></div>
+              <div class="provline"><span><b>Inspection booking</b> — SGS · QIMA · Bureau Veritas</span><span class="mono">unlocked at PO stage</span></div>
+            </div>
+          </div>
+          <div class="integr">
+            <span class="ig soon">Freight booking — unlocks with your first shipment</span>
+            <span class="ig soon">PO financing — unlocks on documented orders</span>
+            <span class="ig soon">Customs docs — soon</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -357,6 +487,89 @@
     </div>
   </section>
 
+  <!-- ================= ENGINE ================= -->
+  <section class="stage" id="v-engine">
+    <div class="engine">
+      <div class="en-head">
+        <div>
+          <div class="en-kick"><i></i><span>THE ENGINE ROOM · LIVE</span></div>
+          <h2>Receipts for the magic.</h2>
+          <p class="en-sub">Every email measured, every quote verified — the seven numbers behind why Kai feels fast.</p>
+        </div>
+        <div class="en-audit">MEASURED WEEKLY · NOT PROMISED<br>AUDITED AGAINST ORDERS SHIPPED</div>
+      </div>
+      <div class="en-pipe">
+        <div class="pl">ONE EMAIL'S JOURNEY — WHAT HAPPENS BETWEEN "GO" AND YOUR QUOTE TABLE</div>
+        <div class="en-stages">
+          <div class="en-st"><b>Draft</b><small>you approve every one</small></div>
+          <span class="en-arrow">→</span>
+          <div class="en-st"><b>Send</b><small>from your own domain</small></div>
+          <span class="en-arrow">→</span>
+          <div class="en-st"><b>Chase</b><small>politely, their timezone</small></div>
+          <span class="en-arrow">→</span>
+          <div class="en-st"><b>Parse</b><small>PDF, Excel, WeChat, photo</small></div>
+          <span class="en-arrow">→</span>
+          <div class="en-st"><b>Normalize</b><small>everything to FOB USD</small></div>
+          <span class="en-arrow">→</span>
+          <div class="en-st last"><b>Decide</b><small>one table, your call</small></div>
+        </div>
+      </div>
+      <div class="en-wow">
+        <div class="en-w">
+          <div class="lbl">FIRST REAL QUOTE</div>
+          <div class="big">26<small>h</small></div>
+          <div class="l1">median, from "go" to a quote you can compare</div>
+          <div class="l2">we promise 2–3 days · fastest this week: 5h 51m</div>
+        </div>
+        <div class="en-w">
+          <div class="lbl">VERIFIED SAVINGS</div>
+          <div class="big">−18<small>%</small></div>
+          <div class="l1">average vs the price you pay today</div>
+          <div class="l2">counted only when a real quote beats a real invoice</div>
+        </div>
+        <div class="en-w neutral">
+          <div class="lbl">YOUR EFFORT</div>
+          <div class="big">4 <small>taps</small></div>
+          <div class="l1">approvals per job — that's your whole workload</div>
+          <div class="l2">emails you wrote: 0 · forms you filled: 0</div>
+        </div>
+      </div>
+      <div class="en-meters">
+        <div class="en-m">
+          <div class="mrow"><span>FACTORY RESPONSE</span><b>68%</b></div>
+          <div class="en-bar"><i style="width:68%"></i></div>
+          <p>of RFQs get a real reply — cold-email industry norm is ~9%</p>
+        </div>
+        <div class="en-m">
+          <div class="mrow"><span>DECISION-READY JOBS</span><b>83%</b></div>
+          <div class="en-bar"><i style="width:83%"></i></div>
+          <p>of jobs reach 3+ comparable quotes — enough to actually choose</p>
+        </div>
+        <div class="en-m">
+          <div class="mrow"><span>PARSE ACCURACY</span><b>96.4%</b></div>
+          <div class="en-bar"><i style="width:96%"></i></div>
+          <p>quotes extracted clean from PDFs, spreadsheets &amp; chat screenshots</p>
+        </div>
+        <div class="en-m">
+          <div class="mrow"><span>CHASE REVIVAL</span><b>41%</b></div>
+          <div class="en-bar"><i style="width:41%"></i></div>
+          <p>of silent factories answer after a polite chase in their timezone</p>
+        </div>
+      </div>
+      <div class="en-live">
+        <div class="lh"><b>▮ LIVE WIRE</b><span>what the engine did while you were reading this</span></div>
+        <div class="en-ev"><span class="t">14:02</span><span>Quote parsed from a 14-page PDF — <span class="g">$8.90/unit extracted ✓</span> <span class="d">filed to the bottle job</span></span></div>
+        <div class="en-ev"><span class="t">13:47</span><span>Hanoi Steelcraft revived after 2 chases — quote promised by Thursday</span></div>
+        <div class="en-ev"><span class="t">12:05</span><span>Ningbo quoted with MOQ 5,000 — <span class="a">▲ flagged: 5× your usual</span> <span class="d">held for your call</span></span></div>
+        <div class="en-ev"><span class="t">11:20</span><span>Profile learned: never name a target price in a first email — <span class="d">from your edit</span></span></div>
+      </div>
+      <div class="en-foot">
+        <span>TRAINED ON 2,300+ REAL FACTORY THREADS · TESTED DAILY ON LIVE ORDERS AT HEADWIND</span>
+        <span>SOURCING<span class="gpt">GPT</span> · THE ENGINE</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= MACHINES ================= -->
   <section class="stage" id="v-mach">
     <div class="mach">
@@ -391,7 +604,7 @@
     </div>
   </section>
 
-  <footer class="note">Concept demo · SourcingGPT v2 · same job, every surface — agent (mobile &amp; email) · workspace (inbox · QC) · Shopify app · machines</footer>
+  <footer class="note">Concept demo · SourcingGPT v2 · same job, every surface — agent (mobile &amp; email) · workspace (inbox · QC) · Shopify app · the engine · machines</footer>
 </div>
 
 <script>
@@ -402,8 +615,10 @@
     {t:"Meet the agent",x:"It introduces itself like a hire — name, desk, your domain."},
     {t:"The ask",x:"One message. The spec and photo come straight from the store."},
     {t:"Approve the plan",x:"Nothing moves without a yes. You're cc'd on every email."},
+    {t:"The draft, approved",x:"Every email is yours to approve. Your edits teach Kai how you buy."},
     {t:"RFQs go out",x:"Real emails to real factories — from your company's own address."},
     {t:"Quotes in, normalized",x:"Three currencies, three formats — one honest comparison."},
+    {t:"The employee thinks ahead",x:"Alternates and a trend test — proposed, never pushed. New work opens as a job."},
     {t:"Samples, paid in-chat",x:"Small money, receipted, filed to the job automatically."},
     {t:"The box arrives",x:"The moment it stops being chat bubbles and becomes a product."},
     {t:"Approve → PO cut",x:"One tap. The paperwork writes itself."},
@@ -417,12 +632,20 @@
     ['<div class="msg from-user">We\'re paying <b>$11.20/unit</b> for the 32oz bottle. Beat it.<div class="chiprow"><span class="chip"><span class="ic">📄</span>bottle-spec-v3.pdf<small>from your Shopify listing</small></span></div><div class="imgrid"><div class="im">🍼</div></div><span class="t">09:42</span></div>'],
     // 2
     ['<div class="msg from-agent">On it. Plan: RFQ to <b class="hl">3 verified factories</b> (2 CN, 1 VN — all BV/SGS-audited, export history to the US). I\'ll negotiate in Chinese where it helps. <b>You\'re cc\'d on every email.</b> Go?<div class="btns"><span class="b done">✓ Approved</span></div><span class="t">09:44</span></div>'],
-    // 3
+    // 3 — draft approval
+    ['<div class="msg from-agent">Draft ready. This is how RFQ-0142 leaves <b>your</b> inbox:<div class="card"><div class="c-head"><span>Draft · RFQ-0142</span><span>kai@acmegoods.com</span></div><div class="c-body" style="font-family:var(--mono);font-size:11px;line-height:1.65">To: 3 vetted factories<br>Subj: RFQ — 32oz double-wall bottle, 5,000 pcs<br><span style="color:var(--muted)">您好 — spec attached. Please quote FOB Shenzhen with MOQ, lead time and sample cost…</span></div></div><div class="btns"><span class="b solid">✓ Approve</span><span class="b">Change it</span><span class="b">Edit myself</span></div><span class="t">09:46</span></div>',
+     '<div class="msg from-user">Don\'t mention our current supplier. Otherwise good — send.<span class="t">09:47</span></div>',
+     '<div class="msg from-agent">Removed &amp; sent ✓ — and noted in your profile: <b class="hl">never reference incumbents in outreach.</b> (“Edit myself” opens the draft in your own Gmail — you polish, you send, I learn.)<span class="t">09:48</span></div>'],
+    // 4 — RFQs out
     ['<div class="mailchip">📧 <b>RFQ-0142</b> → Shenzhen Metalworks Co. · <b>cc: you</b> <button class="open" onclick="this.closest(\'.mailchip\').classList.toggle(\'open-state\')">view email</button><div class="mailbody">From: kai@acmegoods.com<br>To: sales@szmetalworks.cn · Cc: mike@acmegoods.com<br>Subj: RFQ — 32oz double-wall stainless bottle, 5,000 pcs<br><br>您好 — attached spec and target QTY. Please quote FOB Shenzhen with MOQ, lead time and sample cost…</div></div>',
      '<div class="mailchip">📧 <b>RFQ-0142</b> → Ningbo Drinkware Ltd. · <b>cc: you</b></div>',
      '<div class="mailchip">📧 <b>RFQ-0142</b> → Hanoi Steelcraft JSC · <b>cc: you</b></div>'],
-    // 4
+    // 5 — quotes in
     ['<div class="msg from-agent">3 quotes in, normalized to FOB USD:<div class="card"><div class="c-head"><span>Quotes · Job SGX-0142</span><span>48 hrs</span></div><div class="c-body"><div class="qrow best"><span class="f">Shenzhen Metalworks</span><span class="badge">BV audit ✓</span><span class="p"><b>$8.90</b> · MOQ 500 · 30d</span></div><div class="qrow"><span class="f">Ningbo Drinkware</span><span class="p">$9.35 · MOQ 1000 · 25d</span></div><div class="qrow"><span class="f">Hanoi Steelcraft</span><span class="p">$9.10 · MOQ 2000 · 40d</span></div></div></div>That\'s <span class="save">−21% vs today</span>. Their quote PDFs are filed to the job.<div class="chiprow"><span class="chip"><span class="ic">📑</span>SZM-quote.pdf</span><span class="chip"><span class="ic">📑</span>NBD-quote.pdf</span></div><span class="t">Thu 11:02</span></div>'],
+    // 6 — alternates & adjacency
+    ['<div class="msg from-agent">While you look those over — two things I spotted:<br>1 · Shenzhen already tools a <b class="hl">near-identical 40oz model</b>. If you ever size up, the mold is free.<br>2 · Collapsible silicone bottles are <b>trending on TikTok</b> and fit your line. Want a low-MOQ test? I\'ll open a job.<span class="t">Thu 11:15</span></div>',
+     '<div class="msg from-user">Try the collapsible. Small test.<span class="t">11:18</span></div>',
+     '<div class="msg from-agent">Job opened: <b>Collapsible bottle — trend test</b> · queued, slot 4 of 5. I\'ll brief you when quotes land.<span class="t">11:19</span></div>'],
     // 5
     ['<div class="msg from-user">Samples from the top 2.<span class="t">11:05</span></div>',
      '<div class="msg from-agent">Sample invoice — 2 factories, DHL to your office:<div class="card"><div class="c-head"><span>Sample invoice</span><span>#SI-0142</span></div><div class="c-body"><div class="payrow"><span style="flex:1">2 samples + express freight</span><b class="mono">$86.00</b><span class="pp">PayPal</span></div><div class="receipt">✓ Paid · receipt filed to Job SGX-0142</div></div></div><span class="t">11:06</span></div>'],
@@ -440,27 +663,29 @@
 
   /* per-step workspace data */
   var stageNames=["Brief","RFQ","Quotes","Samples","PO","QC","Shipped"];
-  var stepStage=[0,0,1,1,2,3,3,4,5,6];
+  var stepStage=[0,0,1,1,1,2,2,3,3,4,5,6];
   var docsAt=[[],
     ["📄 bottle-spec-v3.pdf|from Shopify"],
     [],
+    ["✉️ RFQ-0142 draft|approved · 1 edit"],
     ["📧 RFQ-0142 ×3|outbound, you cc'd"],
     ["📑 SZM-quote.pdf|normalized","📑 NBD-quote.pdf|normalized"],
+    ["💡 Alternates memo|40oz twin · TikTok test"],
     ["🧾 SI-0142 receipt|PayPal · $86"],
     ["🖼 sample-photos ×2|from your phone"],
     ["📋 PO-2047.pdf|30% dep · 70% B/L"],
     ["🗓 SGS booking|pre-shipment · Mar 18"],
     ["🧾 SGS-report.pdf|AQL 2.5 ✓","🚢 B/L-88231.pdf|ETA Apr 22"]];
-  var actAt=["Employee started — kai@acmegoods.com live","Ask received in WhatsApp","Plan approved — 3 factories","RFQs sent · replies parsing to this job","3 quotes normalized (−21%)","Samples paid $86 · receipted","Samples delivered · buyer approved quality","PO-2047 cut & sent — $44,500","SGS inspection booked (agent suggested)","Delivered on time · $11,500 saved"];
+  var actAt=["Employee started — kai@acmegoods.com live","Ask received in WhatsApp","Plan approved — 3 factories","RFQ draft approved — your edit noted to profile","RFQs sent · replies parsing to this job","3 quotes normalized (−21%)","2 alternates proposed · trend-test job queued","Samples paid $86 · receipted","Samples delivered · buyer approved quality","PO-2047 cut & sent — $44,500","SGS inspection booked (agent suggested)","Delivered on time · $11,500 saved"];
 
   var mails=[
-    {fr:"Kai (your agent)",em:"kai@acmegoods.com",sub:"RFQ — 32oz bottle, 5,000 pcs",pre:"→ 3 factories · you're cc'd",tag:"SGX-0142",hot:1,at:3},
-    {fr:"Shenzhen Metalworks",em:"sales@szmetalworks.cn",sub:"Re: RFQ — quotation attached",pre:"FOB $8.90, MOQ 500 …",tag:"SGX-0142",hot:1,at:4},
-    {fr:"Ningbo Drinkware",em:"lily@nbdrinkware.com",sub:"Re: RFQ — our best offer",pre:"USD 9.35 with tooling included …",tag:"SGX-0142",at:4},
-    {fr:"DHL Express",em:"noreply@dhl.com",sub:"Shipment 4471 — out for delivery",pre:"2 parcels · signature required",tag:"SGX-0142",at:6},
-    {fr:"SGS Hong Kong",em:"booking@sgs.com",sub:"Inspection confirmed — Mar 18",pre:"Pre-shipment · AQL 2.5 · inspector assigned",tag:"SGX-0142",hot:1,at:8},
+    {fr:"Kai (your agent)",em:"kai@acmegoods.com",sub:"RFQ — 32oz bottle, 5,000 pcs",pre:"→ 3 factories · you're cc'd",tag:"SGX-0142",hot:1,at:4},
+    {fr:"Shenzhen Metalworks",em:"sales@szmetalworks.cn",sub:"Re: RFQ — quotation attached",pre:"FOB $8.90, MOQ 500 …",tag:"SGX-0142",hot:1,at:5},
+    {fr:"Ningbo Drinkware",em:"lily@nbdrinkware.com",sub:"Re: RFQ — our best offer",pre:"USD 9.35 with tooling included …",tag:"SGX-0142",at:5},
+    {fr:"DHL Express",em:"noreply@dhl.com",sub:"Shipment 4471 — out for delivery",pre:"2 parcels · signature required",tag:"SGX-0142",at:8},
+    {fr:"SGS Hong Kong",em:"booking@sgs.com",sub:"Inspection confirmed — Mar 18",pre:"Pre-shipment · AQL 2.5 · inspector assigned",tag:"SGX-0142",hot:1,at:10},
     {fr:"Hangzhou Packfine",em:"amy@packfine.cn",sub:"Re: RFQ — mailer boxes",pre:"Quote for 10k units attached …",tag:"SGX-0139",at:0},
-    {fr:"SGS Hong Kong",em:"reports@sgs.com",sub:"Inspection report — PASSED",pre:"AQL 2.5 ✓ · 14 pages · filed to job",tag:"SGX-0142",hot:1,at:9}
+    {fr:"SGS Hong Kong",em:"reports@sgs.com",sub:"Inspection report — PASSED",pre:"AQL 2.5 ✓ · 14 pages · filed to job",tag:"SGX-0142",hot:1,at:11}
   ];
 
   var step=0,MAX=msgs.length-1,lastMail=0;
@@ -485,9 +710,9 @@
     var docs=[];for(var s2=0;s2<=step;s2++)docs=docs.concat(docsAt[s2]);
     $("nDocs").textContent=docs.length;
     $("wsDocs").innerHTML=docs.length?docs.map(function(x){var p=x.split("|");return '<div class="docline"><span>'+p[0]+'</span><span class="mono">'+p[1]+"</span></div>"}).join(""):'<p class="empty">Nothing filed yet.</p>';
-    $("wsQuotes").innerHTML=step>=4?'<div class="qrow best"><span class="f">Shenzhen Metalworks</span><span class="badge">BV ✓</span><span class="p"><b>$8.90</b> · 30d</span></div><div class="qrow"><span class="f">Ningbo Drinkware</span><span class="p">$9.35 · 25d</span></div><div class="qrow"><span class="f">Hanoi Steelcraft</span><span class="p">$9.10 · 40d</span></div><div style="margin-top:8px" class="save mono">−21% vs current price</div>':'<p class="empty">No quotes yet — RFQs '+(step>=3?"out, replies pending.":"not sent.")+"</p>";
-    $("nQuotes").textContent=step>=4?3:0;
-    $("wsPay").innerHTML=step>=5?'<div class="docline"><span>🧾 Samples + freight</span><span class="mono">PayPal · $86.00 · paid</span></div>'+(step>=7?'<div class="docline"><span>📋 PO-2047 deposit</span><span class="mono">wire · $13,350 · scheduled</span></div>':""):'<p class="empty">No payments on this job.</p>';
+    $("wsQuotes").innerHTML=step>=5?'<div class="qrow best"><span class="f">Shenzhen Metalworks</span><span class="badge">BV ✓</span><span class="p"><b>$8.90</b> · 30d</span></div><div class="qrow"><span class="f">Ningbo Drinkware</span><span class="p">$9.35 · 25d</span></div><div class="qrow"><span class="f">Hanoi Steelcraft</span><span class="p">$9.10 · 40d</span></div><div style="margin-top:8px" class="save mono">−21% vs current price</div>':'<p class="empty">No quotes yet — RFQs '+(step>=4?"out, replies pending.":"not sent.")+"</p>";
+    $("nQuotes").textContent=step>=5?3:0;
+    $("wsPay").innerHTML=step>=7?'<div class="docline"><span>🧾 Samples + freight</span><span class="mono">PayPal · $86.00 · paid</span></div>'+(step>=9?'<div class="docline"><span>📋 PO-2047 deposit</span><span class="mono">wire · $13,350 · scheduled</span></div>':""):'<p class="empty">No payments on this job.</p>';
     var acts="";for(var s3=step;s3>=0;s3--)acts+='<div class="docline"><span>'+actAt[s3]+"</span></div>";
     $("wsAct").innerHTML=acts;
     /* inbox */
@@ -497,7 +722,7 @@
     lastMail=vis.length;
     /* qc */
     var qc=[];
-    if(step>=8)qc.push({j:"SGX-0142 · 32oz stainless bottle",t:"you approved in chat · $299",d:"Pre-shipment inspection · SGS Shenzhen"+(step>=9?" · report filed to job":" · inspector assigned, visit Mar 18"),st:step>=9?["passed","Passed · AQL 2.5 ✓"]:["sched","Scheduled · Mar 18"]});
+    if(step>=10)qc.push({j:"SGX-0142 · 32oz stainless bottle",t:"you approved in chat · $299",d:"Pre-shipment inspection · SGS Shenzhen"+(step>=11?" · report filed to job":" · inspector assigned, visit Mar 18"),st:step>=11?["passed","Passed · AQL 2.5 ✓"]:["sched","Scheduled · Mar 18"]});
     qc.push({j:"SGX-0135 · silicone lids",t:"during production",d:"SGS Ningbo · inspector on site today — photos land in the job thread",st:["prog","In progress"]});
     qc.push({j:"SGX-0139 · mailer boxes",t:"sample check",d:"QIMA · passed Feb 12 · report filed",st:["passed","Passed"]});
     $("nQC").textContent=qc.length;
@@ -509,9 +734,9 @@
   $("skip").onclick=function(){step=MAX;render()};
   document.addEventListener("keydown",function(e){if(e.key==="ArrowRight")$("next").click();if(e.key==="ArrowLeft")$("back").click()});
 
-  var VIEWS=["agent","ws","shop","mach"];
+  var VIEWS=["agent","ws","shop","engine","mach"];
   var vb=$("views").querySelectorAll("button");
-  var SUBS=["jobs","inbox","qc"];
+  var SUBS=["jobs","inbox","qc","queue","watch","arch","profile","skills"];
   function wsView(s){
     SUBS.forEach(function(x){
       $("ws-sub-"+x).hidden=x!==s;
@@ -521,7 +746,7 @@
   SUBS.forEach(function(s){$("side-"+s).onclick=function(){wsView(s)}});
   function activate(v){
     vb.forEach(function(x){x.classList.toggle("on",x.dataset.v===v)});
-    var isRef=v==="mach"||v==="shop";
+    var isRef=v==="mach"||v==="shop"||v==="engine";
     document.getElementById("ctrls").classList.toggle("static",isRef);
     document.getElementById("refnote").hidden=!isRef;
     VIEWS.forEach(function(x){document.getElementById("v-"+x).classList.toggle("on",x===v)});
@@ -533,8 +758,11 @@
   }
   vb.forEach(function(b){b.onclick=function(){activate(b.dataset.v)}});
   var h=location.hash.replace("#","");
-  if(h==="inbox"||h==="qc"){activate("ws");wsView(h)}
+  if(SUBS.indexOf(h)>=0&&h!=="jobs"){activate("ws");wsView(h)}
   else if(VIEWS.indexOf(h)>=0)activate(h);
+  var sp=null;
+  try{sp=new URLSearchParams(location.search).get("step")}catch(e){}
+  if(sp!==null){step=Math.max(0,Math.min(MAX,parseInt(sp,10)||0));lastMail=0}
 
   render();
 })();
