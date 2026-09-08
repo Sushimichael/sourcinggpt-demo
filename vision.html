@@ -322,6 +322,57 @@
   .kside-foot span{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--muted)}
   .koverlay{position:fixed;inset:0;background:rgba(19,20,22,.45);display:flex;align-items:center;justify-content:center;z-index:60;padding:20px}
   .koverlay[hidden]{display:none}
+  .koverlay.kfull{padding:0;background:#131416}
+
+  /* ---------- sourceready enterprise (full-screen, watch-only) ---------- */
+  .sr-app{display:flex;flex-direction:column;width:100%;height:100%;background:#F4F5F3;overflow:hidden}
+  .sr-top{display:flex;align-items:center;gap:14px;background:#17181A;padding:10px 18px;flex-wrap:wrap}
+  .sr-logo{font-family:var(--display);font-weight:800;font-size:15px;color:#FFF;letter-spacing:-.01em}
+  .sr-logo i{color:#3ECF6E;font-style:normal}
+  .sr-tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;color:#A8ADB2;border:1px solid #3A3D42;border-radius:5px;padding:2px 7px}
+  .sr-crumb{font-family:var(--mono);font-size:10.5px;color:#A8ADB2}
+  .sr-kai{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;color:#8FE0B0;white-space:nowrap}
+  .sr-watch{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;color:#FFD166;border:1px solid #4A4235;background:#2A2416;border-radius:6px;padding:3px 9px;white-space:nowrap}
+  .sr-exit{background:none;border:1px solid #3A3D42;color:#E9EBE9;border-radius:8px;padding:5px 13px;font-size:12px;font-weight:600;cursor:pointer}
+  .sr-exit:hover{border-color:#E9EBE9}
+  .sr-body{display:flex;flex:1;min-height:0}
+  .sr-nav{width:212px;background:#1E2023;padding:12px 10px;display:flex;flex-direction:column;gap:2px;flex-shrink:0;overflow-y:auto}
+  .sr-nav .grp{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:#6E7278;padding:12px 12px 5px}
+  .sr-nav .sn{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#C7CBCF;font-size:13px;font-weight:500;padding:8px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  .sr-nav .sn:hover{background:#26292D}
+  .sr-nav .sn.on{background:#2C2F33;color:#FFF;font-weight:600}
+  .sr-nav .sn.lock{color:#6E7278;cursor:default}
+  .sr-nav .sn.lock:hover{background:transparent}
+  .sr-nav .sn.lock i{font-style:normal;font-size:10px}
+  .sr-n{font-family:var(--mono);font-size:9.5px;background:#2C2F33;border-radius:6px;padding:1px 7px;color:#8FE0B0}
+  .sr-main{flex:1;overflow-y:auto;padding:22px 28px;min-width:0}
+  .sr-modhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+  .sr-modhead b{font-size:17px;font-family:var(--display);font-weight:800;letter-spacing:-.01em}
+  .sr-modhead p{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+  .sr-live{font-family:var(--mono);font-size:10px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:3px 9px}
+  .sr-table{background:#FFF;border:1px solid #E2E4E1;border-radius:12px;overflow:hidden;overflow-x:auto}
+  .sr-tr{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid #EEF0ED;min-width:760px}
+  .sr-tr:last-child{border-bottom:none}
+  .sr-tr.sr-th{background:#FAFBFA;font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--muted);padding:9px 16px}
+  .sr-tr.best{background:#F4FBF6}
+  .sr-tr .c1{flex:2.2;min-width:180px}
+  .sr-tr .c1 b{font-size:13.5px;display:block}
+  .sr-tr .c1 small{font-size:10.5px;color:var(--muted)}
+  .sr-tr .c2{flex:1;font-size:12.5px;min-width:64px}
+  .sr-tr .mono{font-family:var(--mono);font-size:11.5px}
+  .sr-tr .strong{color:var(--accent);font-weight:700}
+  .sr-tr .ok{color:var(--good);font-weight:600}
+  .sr-note{background:#FFF;border:1px solid #E2E4E1;border-left:3px solid #3ECF6E;border-radius:10px;padding:12px 16px;margin-top:12px}
+  .sr-note b{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--accent)}
+  .sr-note p{font-size:13px;color:var(--ink);margin-top:4px}
+  .sr-actions{display:flex;align-items:center;gap:9px;margin-top:14px;flex-wrap:wrap}
+  .sr-btn{font-size:12.5px;font-weight:600;color:#9DA2A6;background:#ECEEEB;border:1px solid #E2E4E1;border-radius:9px;padding:8px 14px;cursor:not-allowed;white-space:nowrap}
+  .sr-acap{font-size:11.5px;color:var(--muted)}
+  .sr-tick{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:14px}
+  .sr-foot{display:flex;align-items:center;justify-content:center;gap:8px;background:#131416;color:#A8ADB2;padding:12px 16px;font-size:12.5px;flex-wrap:wrap;text-align:center}
+  .sr-foot a{color:#3ECF6E;font-weight:700;text-decoration:none}
+  .sr-foot a:hover{text-decoration:underline}
+  @media(max-width:900px){.sr-nav{width:160px}.sr-crumb{display:none}}
   .kmodal{background:#FFF;border-radius:18px;box-shadow:0 24px 70px rgba(19,20,22,.3);max-width:960px;width:100%;max-height:92vh;overflow-y:auto}
   .km-head{display:flex;align-items:center;gap:10px;padding:15px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#FFF;z-index:2;flex-wrap:wrap}
   .km-head b{font-size:15.5px}
@@ -420,7 +471,7 @@
         <div class="kcomposer"><span style="color:var(--muted);font-weight:600">＋</span><div class="field">Message Kai — or open a new job…</div><span>🎙</span></div>
       </div>
       <aside class="kside">
-        <div style="display:flex;justify-content:space-between;align-items:center"><span class="klbl" style="padding:0">Kai's screen · watch-only</span><button class="kexpand" id="kexpandBtn">⤢ expand</button></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="klbl" style="padding:0">Kai's screen · watch-only</span><button class="kexpand" id="kexpandBtn">⤢ full screen</button></div>
         <div class="kscreen" id="kscreenPrev">
           <div class="kscr-bar"><span class="dots3"><i></i><i></i><i></i></span><span>SOURCEREADY ENTERPRISE</span><span class="kk">● KAI</span></div>
           <div class="kscr-body">
@@ -455,47 +506,95 @@
       </div>
     </div>
 
-    <div class="koverlay" id="kmodal-screen" hidden>
-      <div class="kmodal">
-        <div class="km-head"><b>Kai's screen</b><span class="ksync">WATCH-ONLY · SOURCEREADY ENTERPRISE</span><button class="km-x" data-kclose>✕</button></div>
-        <div class="kscrtabs">
-          <button id="kscrtab-quotes" class="on">Compare quotes</button>
-          <button id="kscrtab-inbox">Inbox <span class="n" id="nMail">0</span></button>
-          <button id="kscrtab-qc">QC <span class="n" id="nQC">2</span></button>
+    <div class="koverlay kfull" id="kmodal-screen" hidden>
+      <div class="sr-app">
+        <div class="sr-top">
+          <span class="sr-logo">Source<i>Ready</i></span>
+          <span class="sr-tag">ENTERPRISE</span>
+          <span class="sr-crumb">acmegoods workspace › RFQ SGX-0142 › Quote comparison</span>
+          <span class="sr-kai">● OPERATED BY KAI · kai@acmegoods.com</span>
+          <span class="sr-watch">👁 WATCH-ONLY</span>
+          <button class="sr-exit" data-kclose>Exit ✕</button>
         </div>
-        <div class="km-body">
-          <div id="kscr-quotes">
-            <div class="kbig-screen">
-              <div class="kscr-bar" style="padding:9px 14px"><span class="dots3"><i></i><i></i><i></i></span><span>SOURCEREADY ENTERPRISE — QUOTES · SGX-0142</span><span class="kk">● KAI · LIVE</span></div>
-              <div style="padding:16px 18px">
-                <div class="kbig-row best"><span><b>Shenzhen Metalworks</b> · BV audit ✓ · tooling in-house</span><span class="mono" style="color:var(--accent);font-weight:600">$8.90 · MOQ 500 · 30d ▸</span></div>
-                <div class="kbig-row"><span>Hanoi Steelcraft JSC · Vietnam lane</span><span class="mono">$9.10 · MOQ 2,000 · 40d</span></div>
-                <div class="kbig-row"><span>Ningbo Drinkware Ltd. · tooling included</span><span class="mono">$9.35 · MOQ 1,000 · 25d</span></div>
-                <p style="font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:12px">▸ kai@acmegoods.com is drafting the sample order · every click files a receipt · you can watch, not touch</p>
+        <div class="sr-body">
+          <nav class="sr-nav">
+            <div class="grp">KAI'S MODULES — OPEN FOR YOUR JOBS</div>
+            <div class="sn on" id="kscrtab-quotes"><span>📊 Quotes</span><span class="sr-n">3</span></div>
+            <div class="sn" id="kscrtab-inbox"><span>✉️ Inbox</span><span class="sr-n" id="nMail">0</span></div>
+            <div class="sn" id="kscrtab-qc"><span>🛡 Inspections</span><span class="sr-n" id="nQC">2</span></div>
+            <div class="grp">FULL PLATFORM — SEAT REQUIRED</div>
+            <div class="sn lock"><span>🏭 Suppliers · 4M+</span><i>🔒</i></div>
+            <div class="sn lock"><span>📦 Orders</span><i>🔒</i></div>
+            <div class="sn lock"><span>🚢 Logistics</span><i>🔒</i></div>
+            <div class="sn lock"><span>💳 Payments</span><i>🔒</i></div>
+            <div class="sn lock"><span>📈 Analytics</span><i>🔒</i></div>
+            <div class="sn lock"><span>🧪 Lab testing</span><i>🔒</i></div>
+          </nav>
+          <div class="sr-main">
+            <div id="kscr-quotes">
+              <div class="sr-modhead">
+                <div>
+                  <b>Quote comparison — 32oz double-wall stainless bottle</b>
+                  <p>RFQ SGX-0142 · 3 of 3 received · normalized FOB USD · refreshed 11:07:42</p>
+                </div>
+                <span class="sr-live">● LIVE</span>
+              </div>
+              <div class="sr-table">
+                <div class="sr-tr sr-th">
+                  <span class="c1">FACTORY</span><span class="c2">UNIT FOB</span><span class="c2">MOQ</span><span class="c2">LEAD</span><span class="c2">TOOLING</span><span class="c2">AUDIT</span><span class="c2">LANDED · CHI</span><span class="c2">VS TODAY</span>
+                </div>
+                <div class="sr-tr best">
+                  <span class="c1"><b>Shenzhen Metalworks</b><small>Guangdong · exports US 9yr</small></span>
+                  <span class="c2 mono strong">$8.90</span><span class="c2 mono">500</span><span class="c2 mono">30d</span><span class="c2">in-house</span><span class="c2 ok">BV ✓ Mar</span><span class="c2 mono">$9.84</span><span class="c2 ok mono">−21%</span>
+                </div>
+                <div class="sr-tr">
+                  <span class="c1"><b>Hanoi Steelcraft JSC</b><small>Vietnam · tariff-friendly lane</small></span>
+                  <span class="c2 mono">$9.10</span><span class="c2 mono">2,000</span><span class="c2 mono">40d</span><span class="c2">included</span><span class="c2 ok">SGS ✓</span><span class="c2 mono">$9.97</span><span class="c2 mono">−18%</span>
+                </div>
+                <div class="sr-tr">
+                  <span class="c1"><b>Ningbo Drinkware Ltd.</b><small>Zhejiang · drinkware specialist</small></span>
+                  <span class="c2 mono">$9.35</span><span class="c2 mono">1,000</span><span class="c2 mono">25d</span><span class="c2">included</span><span class="c2 ok">BV ✓</span><span class="c2 mono">$10.21</span><span class="c2 mono">−16%</span>
+                </div>
+              </div>
+              <div class="sr-note">
+                <b>KAI'S WORKING NOTE</b>
+                <p>Shenzhen wins on landed cost and in-house tooling. Drafting the sample order now — counter-offer queued for after samples pass. Hanoi stays warm in case tariffs move.</p>
+              </div>
+              <div class="sr-actions">
+                <span class="sr-btn lock">Send counter-offer 🔒</span>
+                <span class="sr-btn lock">Export comparison 🔒</span>
+                <span class="sr-btn lock">Add supplier 🔒</span>
+                <span class="sr-acap">actions need an Enterprise seat — Kai has one; you're watching his</span>
+              </div>
+              <p class="sr-tick">▸ kai@acmegoods.com opened Sample Orders · 11:07:42 · every action files a receipt to your job</p>
+            </div>
+            <div id="kscr-inbox" hidden>
+              <div class="inbox" style="border:1px solid #E2E4E1">
+                <div class="in-head">
+                  <h2>Inbox</h2>
+                  <span class="domain">kai@acmegoods.com</span>
+                  <p class="in-note">Kai's inbox, on <b>your own domain</b>. Factories reply to your company — every thread parses into its job, and you're cc'd on everything outbound.</p>
+                </div>
+                <div class="thread-list" id="mailList"></div>
+              </div>
+            </div>
+            <div id="kscr-qc" hidden>
+              <div class="qc" style="border:1px solid #E2E4E1">
+                <div class="qc-head">
+                  <h2>QC &amp; Inspections</h2>
+                  <span class="domain">human in the loop · on demand</span>
+                  <p class="qc-note">Kai can't walk a factory floor — so a <b>real inspector</b> is ordered like a tool call. You approve the booking; the report files itself to the job.</p>
+                </div>
+                <div id="qcList"></div>
+                <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas.</div>
               </div>
             </div>
           </div>
-          <div id="kscr-inbox" hidden>
-            <div class="inbox" style="border:1px solid var(--line)">
-              <div class="in-head">
-                <h2>Inbox</h2>
-                <span class="domain">kai@acmegoods.com</span>
-                <p class="in-note">Kai's inbox, on <b>your own domain</b>. Factories reply to your company — every thread parses into its job, and you're cc'd on everything outbound.</p>
-              </div>
-              <div class="thread-list" id="mailList"></div>
-            </div>
-          </div>
-          <div id="kscr-qc" hidden>
-            <div class="qc" style="border:1px solid var(--line)">
-              <div class="qc-head">
-                <h2>QC &amp; Inspections</h2>
-                <span class="domain">human in the loop · on demand</span>
-                <p class="qc-note">Kai can't walk a factory floor — so a <b>real inspector</b> is ordered like a tool call. You approve the booking; the report files itself to the job.</p>
-              </div>
-              <div id="qcList"></div>
-              <div class="qc-foot">First human rail: inspections through SGS · QIMA · Bureau Veritas.</div>
-            </div>
-          </div>
+        </div>
+        <div class="sr-foot">
+          <span>👁 You're watching through the glass — Kai's hands are on the wheel.</span>
+          <span>Want your own seat at this desk?</span>
+          <a href="https://www.sourceready.com/" target="_blank" rel="noopener">Get SourceReady Enterprise access →</a>
         </div>
       </div>
     </div>
