@@ -50,8 +50,29 @@
   .dots span{width:7px;height:7px;border-radius:50%;background:var(--line)}
   .dots span.hit{background:var(--accent)}
 
-  /* ---------- agent (phone) ---------- */
+  /* ---------- agent (journey) ---------- */
   .agent-wrap{display:flex;gap:26px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+  .journey{display:flex;gap:16px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+  .jstop{display:flex;flex-direction:column;gap:10px;align-items:center}
+  .jstop.j1{width:250px;padding-top:120px}
+  .jstop.j2{width:430px;padding-top:66px}
+  .jlbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--muted);align-self:flex-start}
+  .jarrow{font-family:var(--mono);font-size:16px;color:var(--accent);align-self:center;padding-top:40px}
+  .jfoot{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--muted)}
+  .jad{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;width:100%;box-shadow:0 10px 26px rgba(19,20,22,.08)}
+  .jad-head{display:flex;gap:9px;align-items:center}
+  .jad-av{width:32px;height:32px;border-radius:8px;background:var(--ink);color:#3ECF6E;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:15px}
+  .jad-head b{font-size:13px;display:block}
+  .jad-head small{font-size:10.5px;color:var(--muted)}
+  .jad-hook{font-family:var(--display);font-weight:800;font-size:16.5px;letter-spacing:-.01em;line-height:1.3;margin-top:12px}
+  .jad-sub{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.45}
+  .jad-cta{display:inline-block;background:var(--ink);color:#FFF;font-size:12px;font-weight:700;border-radius:999px;padding:7px 14px;margin-top:12px}
+  .jbrowser{width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 14px 34px rgba(19,20,22,.12);background:#FFF}
+  .jbar{display:flex;align-items:center;gap:5px;background:#F4F5F4;border-bottom:1px solid var(--line);padding:7px 10px}
+  .jbar i{width:8px;height:8px;border-radius:50%;background:#D9DAD6}
+  .jbar span{font-family:var(--mono);font-size:9px;color:var(--muted);margin-left:6px}
+  .jbrowser img{width:100%;height:auto;display:block}
+  @media(max-width:1150px){.jarrow{display:none}.jstop.j1,.jstop.j2{padding-top:0;width:min(430px,100%)}}
   .phone{width:400px;max-width:100%;background:var(--panel);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 18px 40px rgba(19,20,22,.08)}
   .phone .ph-head{background:var(--ink);color:#FFF;padding:14px 16px;display:flex;gap:11px;align-items:center}
   .avatar{width:38px;height:38px;border-radius:50%;background:#3ECF6E;color:#0B3A20;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:15px}
@@ -461,14 +482,37 @@
 
   <!-- ================= AGENT ================= -->
   <section class="stage on" id="v-agent">
-    <div class="agent-wrap">
-      <div class="phone">
-        <div class="ph-head">
-          <div class="avatar">K</div>
-          <div class="who"><b>Kai — your sourcing employee</b><span>kai@acmegoods.com · WhatsApp</span></div>
-          <span class="online">● online</span>
+    <div class="journey">
+      <div class="jstop j1">
+        <span class="jlbl">01 · THEY SEE US</span>
+        <div class="jad">
+          <div class="jad-head"><div class="jad-av">S</div><div><b>SourcingGPT</b><small>Sponsored</small></div></div>
+          <p class="jad-hook">Your AI sourcing employee.<br>It gets it done.</p>
+          <p class="jad-sub">Emails factories · real quotes in 2–3 days · books inspectors. First job free.</p>
+          <span class="jad-cta">Hire it free →</span>
         </div>
-        <div class="thread" id="thread"></div>
+        <span class="jfoot">LinkedIn · Facebook · TikTok</span>
+      </div>
+      <span class="jarrow">→</span>
+      <div class="jstop j2">
+        <span class="jlbl">02 · ONE CHOICE — THAT'S THE SETUP</span>
+        <div class="jbrowser">
+          <div class="jbar"><i></i><i></i><i></i><span>sourcinggpt.ai/start</span></div>
+          <img src="img/onboard.png" alt="Sign-up: where should Kai message you? WhatsApp, email, your AI, or web" loading="lazy">
+        </div>
+        <span class="jfoot">pick a channel · "Hi Kai" sends itself</span>
+      </div>
+      <span class="jarrow">→</span>
+      <div class="jstop j3">
+        <span class="jlbl">03 · THE AGENTIC EXPERIENCE</span>
+        <div class="phone">
+          <div class="ph-head">
+            <div class="avatar">K</div>
+            <div class="who"><b>Kai — your sourcing employee</b><span>kai@acmegoods.com · WhatsApp</span></div>
+            <span class="online">● online</span>
+          </div>
+          <div class="thread" id="thread"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -887,7 +931,7 @@
   "use strict";
   /* ---------- story script ---------- */
   var beats=[
-    {t:"Hired — one question",x:"Setup is a single choice: where should Kai message you? That's the whole onboarding."},
+    {t:"From ad to first message",x:"They saw the ad, picked WhatsApp at sign-up — and \"Hi Kai\" sends itself. Setup done."},
     {t:"Meet the agent",x:"It introduces itself like a hire — name, desk, your domain."},
     {t:"The ask",x:"One message. The spec and photo come straight from the store."},
     {t:"Approve the plan",x:"Nothing moves without a yes. You're cc'd on every email."},
@@ -902,8 +946,8 @@
     {t:"Delivered, on time",x:"The job closes with a number, not a feeling."}
   ];
   var msgs=[
-    // 0 — onboarding: one choice
-    ['<div class="msg from-sys"><div class="card"><div class="c-head"><span>Setup · step 1 of 1</span><span>that\'s all of it</span></div><div class="c-body"><div style="font-size:13px;font-weight:700;margin-bottom:8px">Where should Kai message you?</div><div class="chiprow" style="margin-top:0"><span class="chip" style="border-color:var(--good);background:var(--good-soft);color:var(--good)">💬 WhatsApp ✓</span><span class="chip">✉️ Email</span><span class="chip">🤖 Your AI</span><span class="chip">💻 Web</span></div><div style="font-size:11px;color:var(--muted);margin-top:8px">same Kai on every channel · add more anytime</div></div></div></div>',
+    // 0 — from sign-up: the prefilled hello
+    ['<div class="msg from-sys" style="font-family:var(--mono);font-size:9.5px;color:var(--muted)">connected via WhatsApp — chosen at sign-up · same Kai on every channel</div>',
      '<div class="msg from-user">Hi Kai<span class="t">09:40</span></div>'],
     // 1
     ['<div class="msg from-agent">Hi — I\'m <b>Kai</b>, your sourcing employee. I\'ve read your store: 34 SKUs, top seller is the 32&nbsp;oz stainless bottle. Ask me for anything — a factory, a better price, a sample at your door.<span class="t">09:41</span></div>'],
@@ -943,7 +987,7 @@
   /* per-step workspace data */
   var stageNames=["Brief","RFQ","Quotes","Samples","PO","QC","Shipped"];
   var stepStage=[0,0,0,1,1,1,2,2,3,3,4,5,6];
-  var docsAt=[["📲 WhatsApp connected|setup · step 1 of 1"],
+  var docsAt=[[],
     [],
     ["📄 bottle-spec-v3.pdf|from Shopify"],
     [],
@@ -956,7 +1000,7 @@
     ["📋 PO-2047.pdf|30% dep · 70% B/L"],
     ["🗓 SGS booking|pre-shipment · Mar 18"],
     ["🧾 SGS-report.pdf|AQL 2.5 ✓","🚢 B/L-88231.pdf|ETA Apr 22"]];
-  var actAt=["Hired · channel connected — WhatsApp (setup: one choice)",
+  var actAt=["Signed up — picked WhatsApp at sourcinggpt.ai/start",
     "Employee started — kai@acmegoods.com live","Ask received in WhatsApp","Plan approved — 3 factories","RFQ draft approved — your edit noted to profile","RFQs sent · replies parsing to this job","3 quotes normalized (−21%)","2 alternates proposed · trend-test job queued","Samples paid $86 · receipted","Samples delivered · buyer approved quality","PO-2047 cut & sent — $44,500","SGS inspection booked (agent suggested)","Delivered on time · $11,500 saved"];
 
   var mails=[
